@@ -8,7 +8,13 @@
 <body>
     <h1>Formulario registro</h1>
 
-    <form action="https://www.ua.es">
+    <h2>Enlaces a otras paginas</h2>
+    <a href="index.html">Página de inicio</a>
+    <a href="search.html">Formulario de busqueda</a>
+    <a href="results.html">Resultado de busqueda</a>
+    <a href="picture.html">Detalle de foto</a>
+
+    <form action="index.html">
 
     <p>Por favor, introduce a continuación tus datos para registrarte</p>
     <p><label for="nombreUsuario">Nombre de usuario: </label> <input type="text" name="nombreUsuario" id="nombreUsuario"></p> <!--Nombre usuario-->
@@ -24,8 +30,8 @@
     </select>
     </p>
     <p> <label for="fechaNacimiento">Fecha de Nacimiento:</label> <input type="date" id="fechaNacimiento" name="fechaNacimiento"> </p> <!--Fecha de nacimiento-->
-    <p>Ciudad de residencia: <input type="text" name="ciudad" id="ciudad"></p>
-    <p>Pais: <select  name="pais" id="pais"> <!--Pais-->
+    <p><label for="ciudad">Ciudad de residencia:</label> <input type="text" name="ciudad" id="ciudad"></p>
+    <p><label for="pais">Pais:</label> <select  name="pais" id="pais"> <!--Pais-->
         <!--
             Alemania=1
             China=2
