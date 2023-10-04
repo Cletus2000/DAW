@@ -12,35 +12,39 @@
         <a href="index.html">PI's - Pictures & Images</a>
     </header>
 
+    <nav>
+        <a href="index.html">Página de inicio</a>
+        <a href="form.html">Formulario de registro</a>
+        <a href="search.html">Formulario de busqueda</a>
+        <a href="results.html">Resultado de busqueda</a>
+        <a href="details.html">Detalle de foto</a>
+        <a href="index_unregistered.html">Log out</a>
+    </nav>
     
-    <h1>Formulario búsqueda</h1>
-
-    <a href="index.html">Página de inicio</a>
-    <a href="form.html">Formulario de registro/inicio de sesión</a>
-    <a href="results.html">Resultado de busqueda</a>
-    <a href="picture.html">Detalle de foto</a>
-    
-    <form action="results.html">
-
-    <p><label for="tituloPubli">Título de la publicación: </label> <input type="text" name="tituloPubli" id="tituloPubli"></p> <!--Título-->
-    <p><label for="fechaPubli">Fecha de la publicación: </label> <input type="date" name="fechaPubli" id="fechaPubli"></p> <!--Fecha-->
-    <p><label for="paisPubli">Pais:</label> <select  name="paisPubli" id="paisPubli"> <!--Pais-->
-        <option value="1">Alemania</option> 
-        <option value="2">China</option>
-        <option value="3">España</option>
-        <option value="4">Estados Unidos</option>
-        <option value="5">Francia</option>
-        <option value="6">Grecia</option>
-        <option value="7">Italia</option>
-        <option value="8">México</option>
-        <option value="9">Rusia</option>
-        <option value="10">Ucrania</option>
-     </select>
-
-
-     <p><input type="submit" value="BUSCAR"></p>
-    </form>
-    
+    <main>
+        
+        <h1>Formulario búsqueda</h1>
+        
+        <form action="results.html">
+            
+            <p><label for="tituloPubli">Título de la publicación: </label> <input type="text" name="tituloPubli" id="tituloPubli"></p> <!--Título-->
+            <p><label for="fechaPubli">Fecha de la publicación: </label> <input type="date" name="fechaPubli" id="fechaPubli"></p> <!--Fecha-->
+            <p><label for="paisPubli">Pais:</label> <select  name="paisPubli" id="paisPubli"> <!--Pais-->
+                <option value="1">Alemania</option> 
+                <option value="2">China</option>
+                <option value="3">España</option>
+                <option value="4">Estados Unidos</option>
+                <option value="5">Francia</option>
+                <option value="6">Grecia</option>
+                <option value="7">Italia</option>
+                <option value="8">México</option>
+                <option value="9">Rusia</option>
+                <option value="10">Ucrania</option>
+            </select>            
+            <p><input type="submit" value="BUSCAR"></p>
+        </form>
+    </main>
+        
     
     <footer>
         PI's - Pictures & Images  © 2023 - Raul Ganga González y Carlos Rocamora Colomer
