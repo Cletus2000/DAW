@@ -27,21 +27,25 @@
 					<a href="details.html">Detalle de foto</a>
 				</li>
                 <li>
-					<a href="index_unregistered.html">Log out</a>
+				    <a href="index_unregistered.html">Log out</a>
 				</li>
             </ul>
         </nav>
     </header>
 
     
-    <main>   
-        <h2>Nombre del album</h2>
-        <br>
-        <time datetime="2023-09-28">Fecha</time>
-        <address>Pais</address>
-        <strong>Album</strong>
-        <br>
-        <i>Autor</i>
+    <main>
+        <h1>Resumen del pedido:</h1>
+        <form action="respuesta.html"> <!--Acuerdate que aqui va el nombre de el archivo respuesta -->
+            <p><label for="tituloAlb">Título album: </label>
+                <input type="text" name="tituloAlb" id="tituloAlb" disabled value="Nombre"></p>
+            <p><label for="descr">Texto adicional: </label>
+                <input type="text" name="descr" id="dedscr" disabled value="Descripcion"></p>
+            <p><label for="col">Color portada: </label>
+                <input type="color" name="col" id="col" disabled></p>
+            <p><label for="numcopies">Numero de copias: </label>
+                <input type="number" name="numcopies" id="numcopies" min="0" disabled value="99"></p>
+        </form>
     </main>
 
     <footer>
