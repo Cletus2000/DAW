@@ -706,6 +706,147 @@ main>section{
 		margin: 0 10px;
 	}
 
+
+/*-----Tablas-----*/
+	/* Estilo para el título de la columna */
+	th {
+	background-color: rgb(0, 83, 128); /* Fondo azul */
+	color: white; /* Fuente blanca */
+	}
+
+	/* Estilo para las demás celdas de la tabla */
+	td {
+	background-color: rgb(249, 249, 249); /* Fondo azul */
+	color: rgb(0, 83, 128); /* Fondo blanco */
+	}
+
+/*-----Formularios-----*/
+/* Estilo para el contenedor del formulario */
+.form-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh; /* 100% del alto de la ventana del navegador */
+	width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
+	text-align: center; /* Alinea el contenido del contenedor al centro */
+  }
+  
+  /* Estilo para el formulario (ajustado para hacerlo más pequeño) */
+  form {
+	width: 60%; /* Ajusta el ancho del formulario según tus necesidades */
+	background-color: #fff; /* Fondo blanco */
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+
+/* Estilo para los campos de texto */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[tpe="tel"],
+input[type="number"],
+input[type="color"] {
+  width: 250px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type=text] {
+	border: 2px solid #ccc;
+	border-radius: 4px;
+}
+
+input[type="tel"]{
+	border: 2px solid #ccc;
+	border-radius: 4px;	
+}
+
+input[type="number"]{
+	border: 2px solid #ccc;
+	border-radius: 4px;	
+}
+
+/* Estilo para las áreas de texto (textarea) */
+textarea {
+	width: 300px;
+	padding: 12px 20px;
+	box-sizing: border-box;
+	border: 2px solid #ccc;
+	border-radius: 4px;
+	background-color: #f8f8f8;
+	resize: none;
+	vertical-align: top;
+  }
+
+/* Estilo para los selectores desplegables (select) */
+select {
+	width: 200px;
+	padding: 16px 20px;
+	border: none;
+	border-radius: 4px;
+	background-color: rgb(0, 83, 128);
+	color: white;
+  }
+
+  /* Estilo para las opciones cuando el mouse está sobre ellas */
+select option:hover {
+	background-color: rgb(1, 74, 114); /* Cambia a tu color deseado */
+	color: white; /* Cambia al color de texto deseado */
+  }
+
+/* Estilo para los selectores de fecha (input[type="date"]) */
+input[type="date"] {
+  width: 110px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border: 2px solid #ccc;
+  border-radius: 4px;	
+  background-color: white;
+  color: #333;
+}
+
+/* Estilo para el selector de color (input[type="color"]) */
+input[type="color"] {
+  width: 50px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Estilo para los checkboxes */
+input[type="checkbox"] {
+  margin: 5px 0;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* Estilo para las etiquetas de los checkboxes */
+label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+	background-color:rgb(0, 83, 128);
+	border: none;
+	color: white;
+	padding: 16px 32px;
+	text-decoration: none;
+	margin: 4px 2px;
+	cursor: pointer;
+  }
+  
+
+
 /*-----Media queries-----*/
 	/*Mediaquery de ejemplo*/
 	@media (condicion1) and (condicion2)
