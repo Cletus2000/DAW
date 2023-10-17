@@ -35,11 +35,12 @@
         <table border="1">
             <caption>Tabla de precios</caption>
                 <tr>
+                    <!--    quitar scopes   -->
                     <th scope="row"> Concepto</th>
                     <th scope="col">Tarifa</th>
                 </tr>
                 <tr>
-                    <td scope="row"> < 5 páginas</th>
+                    <td scope="row"> &lt; 5 páginas</th>
                     <td scope="col">7456713645988374061 bolivares por pág.</th>
                 </tr>
                 <tr>
@@ -47,7 +48,7 @@
                     <td scope="col">05984670294 bolivares por pág.</th>
                 </tr>
                 <tr>
-                    <td scope="row"> > 10 páginas</th>
+                    <td scope="row"> &gt; 10 páginas</th>
                     <td scope="col">74567457 bolivares por pág.</th>
                 </tr>
                 <tr>
@@ -59,7 +60,7 @@
                     <td scope="col">2945368290364 bolivares por foto</th>
                 </tr>
                 <tr>
-                    <td scope="row"> Resolución > 300dpi</th>
+                    <td scope="row"> Resolución &gt; 300dpi</th>
                     <td scope="col"> 3184765 bolivares por foto</th>
                 </tr>
             </table>
@@ -86,7 +87,7 @@
                     <option value="1">Alicante</option>
                     <option value="2">Bogota</option>
                 </select>
-                (*)</p> <!--Dirección-->
+                (*)</p> <!--Dirección     mirar field set para agrupar la direccion-->
             <p><label for="tele">Telefono: </label>
                 <input type="tel" name="tele" id="tele"></p> <!--Telefono-->
             <p><label for="col">Color portada: </label>
@@ -109,7 +110,7 @@
             <p><label for="color">Impresion a color</label>
                 <input type="checkbox" name="color" id="color"></p>
             
-            <button href="album_confirmed.html">Enviar</button>
+            <input type="submit" value="Enviar"/>
 
         </form>
         <br>
