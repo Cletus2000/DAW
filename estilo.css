@@ -434,24 +434,21 @@ main>section{
 	}
 
 /*-----Formularios-----*/
-/* Estilo para el contenedor del formulario */
-.form-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh; /* 100% del alto de la ventana del navegador */
-	width: 100%; /* Asegura que el contenedor ocupe todo el ancho de la pantalla */
-	text-align: center; /* Alinea el contenido del contenedor al centro */
-  }
-  
+/* Estilo para el contenedor del formulario */ 
   /* Estilo para el formulario (ajustado para hacerlo más pequeño) */
-  form {
-	width: 60%; /* Ajusta el ancho del formulario según tus necesidades */
+  section{
+	width: 100%; /* Ajusta el ancho del formulario según tus necesidades */
 	background-color: #fff; /* Fondo blanco */
 	padding: 20px;
 	border: 1px solid #ccc;
 	border-radius: 8px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	justify-content: center;
+	border-radius: 1em;
+	background-color: var(--color3);
+	margin: 1em;
+	padding: 1px 0px;
   }
   
 
