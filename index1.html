@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<style>@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="estilo.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/fontello.css">
+	<title>NumTris</title>
+<body>
+	<header id="portada">
+		<a href="index.html">
+			<img src="https://i.stack.imgur.com/wk4Gr.png" alt="Logo de la página">	
+		</a>
+		<div>
+			<h1>NumTris</h1>
+			<p>Consigue sumar el mayor número de múltiplos de 5 para ganar</p>
+		</div>
+	</header>
+
+	<main>
+		<div>
+			<h1>Top 10 puntuaciones hoy</h1>
+  
+			<table id="puntuaciones">
+				<tbody>
+			        <th>Pos.</th>
+			        <th>Usuario</th>
+			        <th>Puntuación</th>
+			      <!-- Aquí se generarán las filas de la tabla con JavaScript -->
+			    </tbody>
+			  </table>
+			  
+			  <p id="no-scores-message">Todavía no hay puntuaciones guardadas. ¡¡¡Sé el primero en conseguir una puntuación máxima!!!</p>
+				<!--script de la tabla de clasificacion-->
+				<script>
+
+									var puntuacionesEjemplo = [
+									{ usuario: 'Jugador1', puntuacion: 100 },
+									{ usuario: 'Jugador2', puntuacion: 80 },
+									{ usuario: 'Jugador3', puntuacion: 120 } ];
+
+									// Almacenar las puntuaciones en sessionStorage
+									sessionStorage.setItem('puntuaciones', JSON.stringify(puntuacionesEjemplo));
+									sessionStorage.clear();
+					    // Comprobar si se está jugando una partida
+					    var partidaEnCurso = sessionStorage.getItem("partidaEnCurso");
+					    if (partidaEnCurso) {
+					      window.location.href = "juego.html";
+					    }
+
+					    // Obtener las puntuaciones desde sessionStorage
+					    var puntuaciones = JSON.parse(sessionStorage.getItem("puntuaciones")) || [];
+
+					    // Ordenar las puntuaciones de mayor a menor
+					    puntuaciones.sort(function(a, b) {
+					      return b.puntuacion - a.puntuacion;
+					    });
+
+					    // Mostrar las puntuaciones en la tabla
+					    var tabla = document.querySelector("table");
+					    var tbody = tabla.querySelector("tbody");
+					    var noScoresMessage = document.getElementById("no-scores-message");
+
+					    if (puntuaciones.length > 0) {
+					      puntuaciones.forEach(function(puntuacion, index) {
+					        var fila = document.createElement("tr");
+
+					        var posicion = document.createElement("td");
+					        posicion.textContent = index + 1;
+					        fila.appendChild(posicion);
+
+					        var usuario = document.createElement("td");
+					        usuario.textContent = puntuacion.usuario;
+					        fila.appendChild(usuario);
+
+					        var puntuacionTd = document.createElement("td");
+					        puntuacionTd.textContent = puntuacion.puntuacion;
+					        fila.appendChild(puntuacionTd);
+
+					        tbody.appendChild(fila);
+					      });
+					    } else {
+					      noScoresMessage.style.display = "block";
+					    }
+				</script>
+
+		</div>
+
+
+		<div>
+			<h2>Formulario de identificación de jugadores</h2>
+			
+			<form id="player-form" action="juego.html" method="get">
+    <label for="player1">Jugador 1:</label>
+    <input type="text" id="player1" name="player1" required>
+    <label for="player2">Jugador 2:</label>
+    <input type="text" id="player2" name="player2" required>
+    <p>
+    <button type="submit" id="start-game-btn" onclick="savePlayers()">Comenzar juego</button>
+    <button type="reset">Limpiar campos</button>
+  </form>
+
+  <script>
+    function savePlayers() {
+      var player1Input = document.getElementById("player1");
+      var player2Input = document.getElementById("player2");
+      
+      var player1 = player1Input.value.trim();
+      var player2 = player2Input.value.trim();
+      
+      if (player1 !== "" && player2 !== "") {
+        var jugadores = {
+          jugador1: player1,
+          jugador2: player2
+        };
+        
+        sessionStorage.setItem("jugadores", JSON.stringify(jugadores));
+      } else {
+        // Si alguno de los campos está vacío, se cancela el envío del formulario
+        event.preventDefault();
+      }
+    }
+  </script>
+
+		</div>
+	</main>
+
+
+	<footer>
+		&copy;
+		<strong>
+			<a href="acerca.html">Información de contacto</a>
+		</strong>
+		2023
+	</footer>
+	
+</body>
+</html>
