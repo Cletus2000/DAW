@@ -1,0 +1,373 @@
+/*Variables de colores*/
+:root {
+	/*
+		1 Fondo de todo
+		2 Fondo del head
+		3 Fondo del titulo
+		4 Botones
+		5 Hover en botones (falta desplegable)
+		6 Fondo articulos
+		7 Footer
+	*/
+
+	--color1: #232323;
+	--color2: #FFFFFC;
+	--color3: #EEEEEE;
+	--color4: #227C9D;
+	--color5: #002749;
+	--color6: #EEEEEE;
+	--color7: #CCCCCC;
+}
+
+*{	/* asterisco es para todo */
+	font-family: 'Didact Gothic', sans-serif;
+}
+
+img{
+	border-radius: 25%;
+}
+
+body {
+	margin: 5px;
+	background-color: var(--color1);
+}
+
+/*-----Cabecera-----*/
+
+	body > header {
+		background-color: var(--color2);
+		background-repeat: repeat;
+		background-size: contain;
+		text-align: center;
+		border-radius: 35px;
+	}
+
+		body > header > a > img{
+			margin: 0.9em;
+			width: 110px;
+			border-radius: 25%;
+		}
+		body > header > div{
+			border-radius: 35px;
+			background-color: var(--color3);
+			margin: 5px;
+			padding: 0%;
+		}
+		body > header > div > h1{
+			color: #000000;
+			font-size: 32px;
+		}
+		body > header > div > p{
+			padding: 0px;
+			color: #000000;
+			margin: 25px;
+		}
+
+/*-----Menu-----*/
+
+	/*Boton extender menu lateral cuando pantalla pequeña*/
+	body > nav{
+		position: sticky;
+		top: 7px;
+		height: 1.75em;
+		
+	}
+	body > nav > label{
+		border-radius: 10px;
+		height: fit-content;
+		width: fit-content;
+			transition: background-color .15s ease-in-out;
+		padding: 2%;
+		background-color: var(--color4); /*-Barrita debajo de menú de inicio-*/
+	}
+		body > nav> label:hover{
+			background-color: var(--color5);
+			transition: background-color .15s ease-in-out;
+			color: var(--color2);
+		}
+
+		/*Casilla tick*/
+			#botonMenu{
+				display: none;
+			}
+			#botonMenu + ul{
+				position: absolute;
+				left: -100%;
+				transition: left .5s ease-in-out;
+
+			}
+
+			#botonMenu:checked + ul{
+				display: grid;
+				left: 0%;
+				transition: left .5s ease-in-out;
+			}
+
+		body > nav > ul{
+			width: 150px;
+			padding-left: 0em; 
+			margin: 10px;
+			list-style: none;
+			border-radius: 10px;
+			
+			left: -500%;
+			transition: left .5s ease-in-out;
+			
+			
+		}
+		
+				body > nav > ul > li > a{
+					background-color: var(--color4);
+					display:flex;
+					padding: 0.5em 0.5em;
+					border-radius: 10px;
+					color: black;
+					text-decoration: none;
+					justify-content: center;
+					transition: background-color .15s ease-in-out;
+					
+				}
+				body > nav > ul > li > a:hover{
+					background-color: var(--color5); /*-Para cuando estás encima de alguna opción-*/
+					color:whitesmoke;
+					font-weight: bold;
+					transition: background-color .15s ease-in-out;
+
+				}
+
+		body > nav > label{
+			padding-left: 0.5em;
+			cursor: pointer;
+		}
+
+
+
+	/*MAIN*/
+	body > main{
+		margin: 10px;
+		margin-top: 25px;
+		padding: 15px;
+
+		border-radius: 20px;
+		background-color: var(--color2);
+		display: grid;
+	}
+		/*Titulo: "Publicaciones"*/
+		body > main > div > h1{
+			color: rgb(0, 0, 0);
+			font-size: 24px;
+			text-align: center;
+		}
+
+/*--------------*/
+
+		body > main > div{
+			border: 1px solid #000;
+			flex: 1;
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			padding: 1em;
+		}
+
+		body > main > div > h4{
+			border: 1px solid #000;
+			text-emphasis: none;
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			padding: 1em;
+		}
+
+		body > main > div > form{
+			display: grid;
+			justify-content: center;
+			align-items: center;
+			padding: 1em;
+		}
+
+		th{
+			background-color: var(--color4);
+		}
+		td, th{
+			text-align: center;
+			width: 33.33%;
+			border: 1px solid black;
+		}
+		#no-scores-message {
+			border: 1px solid black;
+			text-align: center;
+			padding: 2%;
+		}
+	
+
+/*Footer de informacion*/
+	body > footer{	
+		display: flex;
+		justify-content: space-between;
+		padding: 0.5em;
+		padding-left: 1em;
+		padding-right: 1em;
+		
+		background-color: var(--color7);
+
+		border-radius: 25px;
+		
+	}
+
+
+
+/*-------ACERCA------------*/
+.Acerca{
+	display: grid;
+	text-align: center;
+	justify-content: center;
+	grid-template-columns: 90%;
+	border-radius: 1em;
+	background-color: var(--color3);
+	padding: 1em;
+}
+	.Acerca>form{
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 110%;
+		border-radius: 1em;
+		background-color: var(--color4);
+		font-size: 16px;
+	}
+
+		.Acerca>form>label{
+			padding: 10px;
+		}
+			.Acerca>form>input{
+				font-size: 16px;
+				text-align: center;
+				margin: 0px 30px;
+				padding: 5px;
+				border-radius: 1em;
+				color: #000;
+				border: 1px solid var(--color5);
+			}
+			.Acerca>form>ul{
+				font-size: 16px;
+				text-align: center;
+				margin: 0px 30px;
+				padding: 5px;
+				border-radius: 1em;
+				color: #000;
+				border: 1px solid var(--color5);
+				background-color: var(--color3);
+			}
+			.Acerca>form>ul>li{
+				list-style: none;
+			}
+			.Acerca>form>strong{
+				margin: 1em;
+			}
+
+		.Acerca>form>div{
+			display: flex;
+			justify-content: center;
+			padding: 10px 35px;
+		}
+			.Acerca>form>div>button{
+				justify-content: center;
+				padding: 10px;
+				width: 100%;
+				background-color: var(--color4);
+				border: 2px solid var(--color5);
+				border-radius: 1em;
+				transition: background-color .15s ease-in-out;
+
+			}
+			.Acerca>form>div>button:hover{
+				background-color: var(--color5);
+			transition: background-color .15s ease-in-out;
+			color: var(--color2);
+			}
+
+
+
+
+/*-----Media queries-----*/
+	/*Mediaquery de ejemplo*/
+	@media (condicion1) and (condicion2)
+	{
+		/*estilos*/
+	}
+	@media all and (min-width: 480px){
+		/*-----Cabecera-----*/
+		body > header{/*cambia la posicion de los elementos de la cabecera*/
+			display: grid;
+			grid-template-areas: "logo h1"
+								 "logo p";
+			justify-content: center;
+			grid-column-gap: 1em; 
+		}
+		body > main{
+			display: flex;
+		}
+
+			body > header > h1{
+				grid-area: h1;
+			}
+			body > header > p{
+				grid-area: p;
+			}
+			body > header > img{
+				grid-area: logo;
+			}
+	
+			/*-----Menu-----*/
+			body > nav > label{
+				display: none; 
+			}
+			body > nav > input{
+				display: none; 
+			}
+	
+			body > nav{
+				background-color: #0000;
+			display: flex;
+			}
+			body> nav > ul{
+				left: 0;
+				display: flex;
+			}
+				body > nav > ul > li > a > span:nth-of-type(2){
+					/*escondemos el segundo span: el que contiene los nombres de los botones*/
+					display: none;
+				}
+			/*-----Articulos------*/
+			#botonMenu{
+				display: none;
+			}
+			#botonMenu + ul{
+				display: flex;
+				left: 0%;
+			}
+
+			#botonMenu:checked + ul{
+				display: flex;
+				left: 0%;
+			}
+	
+	}
+	@media all and (min-width: 600px){
+		body > nav > ul > li > a > span:nth-of-type(2){/*seleccionamos el segundo span*/
+			display: inline-block;/*volvemos a mostrar el segundo span*/
+		}
+		.comentarios>ul>li{
+			display: flex;
+		}
+	}
+	@media all and (max-width: 700px){
+		.noticia>footer{
+			display: grid;
+			justify-content: center;
+		}
+		.noticia>footer>a{
+			margin: 5px;
+		}
+	}
