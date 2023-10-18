@@ -98,7 +98,7 @@ h1 {
     margin-top: 20px; /* You can adjust the margin as needed */
 }
 
-/* Creating a grid layout for the articles */
+/* div contenedor de los articulos en index */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill	, minmax(300px, 1fr)); /* Maximum 3 columns, each with a minimum width of 300px */
@@ -106,33 +106,30 @@ h1 {
     justify-items: center; /* Center items horizontally within each grid cell */
 }
 
-/* Style for each 'article' block (the cajitas) */
 article {
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
 }
 
-/* Style for the 'img' inside the 'article' */
 article img {
     width: 100px; /* Adjust the image size as needed */
     height: 100px;
 }
 
 
-/*Footer de informacion*/
-	footer{	
-		display: flex;
-		justify-content: space-between;
-		padding: 0.5em;
-		padding-left: 1em;
-		padding-right: 1em;
-		background-color: var(--color7);
-		border-radius: 25px;
-	}
+footer{	
+	display: flex;
+	justify-content: space-between;
+	padding: 0.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+	background-color: var(--color7);
+	border-radius: 25px;
+}
 
 
-main>section{
+main section{
 	display: flex;
 	text-align: center;
 	justify-content: center;
@@ -141,297 +138,6 @@ main>section{
 	margin: 1em;
 	padding: 1em;
 }
-
-.Buscador{
-	display: grid;
-	text-align: center;
-	justify-content: center;
-	grid-template-columns: 90%;
-	border-radius: 1em;
-	background-color: var(--color3);
-	padding: 2em;
-}
-.Buscador>form{
-	display: flex;
-	flex-direction: column;
-	width: 100%;
-	height: 102%;
-	border-radius: 1em;
-	background-color: var(--color4);
-
-}
-		.Buscador>form>label{
-			padding: 2px;
-		}
-		.Buscador>form>input{
-			margin: 10px;
-			margin-top: 0px;
-			padding: 10px;
-			border-radius: 1em;
-		}
-
-		.Buscador>form>div{
-			margin: 10px 0px;
-			padding: 10px;
-		}
-		.Buscador>form>div>p{
-			background-color: whitesmoke;
-			border-radius: 1em;
-		}
-		.Buscador>form>p>button{
-			text-align: center;
-			background-color: var(--color4);
-			border-radius: 2em;
-			padding: 1em;
-			text-decoration: none;
-			color: #000;
-			transition: background-color .15s ease-in-out;
-				border: 2px solid var(--color5);
-				width: 80%;
-				font-size: 16px;
-		}
-
-		.Buscador>form>p>button:hover{
-			background-color: var(--color5);
-			color: var(--color2);
-			transition: background-color .15s ease-in-out;
-		}
-
-.botonesTabla{
-	border-radius: 25px;
-	padding: 10px;
-}
-
-/*-------ACERCA------------*/
-.Acerca{
-	display: grid;
-	text-align: center;
-	justify-content: center;
-	grid-template-columns: 90%;
-	border-radius: 1em;
-	background-color: var(--color3);
-	padding: 1em;
-}
-	.Acerca>form{
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		height: 110%;
-		border-radius: 1em;
-		background-color: var(--color4);
-		font-size: 16px;
-	}
-
-		.Acerca>form>label{
-			padding: 10px;
-		}
-			.Acerca>form>input{
-				font-size: 16px;
-				text-align: center;
-				margin: 0px 30px;
-				padding: 5px;
-				border-radius: 1em;
-				color: #000;
-				border: 1px solid var(--color5);
-			}
-			.Acerca>form>ul{
-				font-size: 16px;
-				text-align: center;
-				margin: 0px 30px;
-				padding: 5px;
-				border-radius: 1em;
-				color: #000;
-				border: 1px solid var(--color5);
-				background-color: var(--color3);
-			}
-			.Acerca>form>ul>li{
-				list-style: none;
-			}
-			.Acerca>form>strong{
-				margin: 1em;
-			}
-
-		.Acerca>form>div{
-			display: flex;
-			justify-content: center;
-			padding: 10px 35px;
-		}
-			.Acerca>form>div>button{
-				justify-content: center;
-				padding: 10px;
-				width: 100%;
-				background-color: var(--color4);
-				border: 2px solid var(--color5);
-				border-radius: 1em;
-				transition: background-color .15s ease-in-out;
-
-			}
-			.Acerca>form>div>button:hover{
-				background-color: var(--color5);
-			transition: background-color .15s ease-in-out;
-			color: var(--color2);
-			}
-
-	.Acerca>footer{
-		margin-top: 2em;
-	}
-
-	.Acerca>footer>a{
-		margin-top: 20px;
-		text-align: center;
-		background-color: var(--color4);
-		border-radius: 1em;
-		padding: 1em;
-		text-decoration: none;
-		color: #000;
-			transition: background-color .15s ease-in-out;
-
-	}
-	.Acerca>footer>a:hover{
-		background-color: var(--color5);
-			transition: background-color .15s ease-in-out;
-			color: var(--color2);
-	}
-.borrar{
-	border-radius: 15px;
-	background-color: tomato; 
-	margin:3px;
-	padding: 10px;
-	border: none;
-}
-
-
-.noticia{
-	padding: 30px;
-}
-
-.noticia>footer{
-	display: flex;
-	justify-content: space-between;
-	padding: 0;
-}
-.noticia>img{
-	width: 90%;
-	max-width: 500px;
-}
-
-.noticia>h4{
-	font-weight: 10;
-}
-
-.noticia>footer>a>button{
-	border-radius: 50px;
-	border: none;
-	padding: 10px;
-}
-	.like{
-		background-color: #2c2;
-		transition: background-color .15s ease-in-out;
-	}
-		.like:hover{
-			background-color: #080;
-			color: var(--color2);
-			transition: background-color .15s ease-in-out;
-		}
-	.dislike{
-		background-color: tomato;
-		transition: background-color .15s ease-in-out;
-	}
-		.dislike:hover{
-			background-color: #800;
-			color: var(--color2);
-			transition: background-color .15s ease-in-out;
-		}
-	.comments{
-		background-color: var(--color4);
-		transition: background-color .15s ease-in-out;
-	}
-		.comments:hover{
-			background-color: var(--color5);
-			color: var(--color2);
-			transition: background-color .15s ease-in-out;
-		}
-.noticia>footer>a>button>input{
-	text-align: center;
-	margin: 10px;
-	width: 60px;
-	color: var(--color1);
-	background-color: var(--color2);
-	border-radius: 10px;
-	border: none;
-}
-
-
-
-.comentarios>ul{
-	list-style: none;
-	padding: 0 20px;
-}
-	.comentarios>ul>li{
-		padding:0px 10px;
-		margin:15px 0;
-		background-color: var(--color4);
-		display: grid;
-		border-radius: 20px;
-		justify-content: center;
-		text-align: center;
-		justify-self: center;
-	}
-	.comentarios>ul>li>h4{
-		display: grid;
-		margin: 10px;
-	}
-	.comentarios>ul>li>h4>p{
-		font-size: 14px;
-		font-weight: 100;
-	}
-	.comentarios>ul>li>h4>img{
-		width: 75px;
-		border-radius: 20px;
-		justify-self: center;
-	}
-	.comentarios>ul>li>h5{
-		margin: 10px 20px;
-		font-size: 14px;
-		font-weight: 100;
-	}
-	.comentarios>ul>li>a{
-		color: var(--color1);
-		text-decoration: none;
-	}
-	.comentarios>ul>li>a:hover{
-		color: var(--color2);
-	}
-
-	.comentarios>ul>form{
-		padding:1px 10px;
-		margin:15px 0;
-		background-color: var(--color4);
-		border-radius: 20px;
-		justify-self: center;
-		display: grid;
-	}
-	.comentarios>ul>form>textarea{
-		margin: 10px;
-		width: 90%;
-		resize: none;
-		height: fit-content;
-		min-height: 250px;
-		margin-bottom: 15px;
-		padding: 10px;
-		justify-self: center;
-	}
-	.comentarios>ul>form>section{
-		display: flex;
-		margin: 0 0 20px 0;
-		justify-content: space-between;
-	}
-	.comentarios>ul>form>section>button{
-		padding: 10px;
-		border-radius: 20px;
-		border: none;
-		margin: 0 10px;
-	}
 
 
 /*-----Tablas-----*/
@@ -463,48 +169,22 @@ main>section{
   
 
 /* Estilo para los campos de texto */
-input,
-select {
+input, textarea, select {
   width: 250px;
   padding: 10px;
   margin: 5px 0;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   border-radius: 4px;
-}
-
-input[type=text] {
-	border: 2px solid #ccc;
-	border-radius: 4px;
-}
-
-input[type="tel"]{
-	border: 2px solid #ccc;
-	border-radius: 4px;	
-}
-
-input[type="number"]{
-	border: 2px solid #ccc;
-	border-radius: 4px;	
+  resize: none;
 }
 
 /* Estilo para las áreas de texto (textarea) */
-textarea {
-	width: 300px;
-	padding: 12px 20px;
-	box-sizing: border-box;
-	border: 2px solid #ccc;
-	border-radius: 4px;
-	background-color: #f8f8f8;
-	resize: none;
-	vertical-align: top;
-  }
+
 
 /* Estilo para los selectores desplegables (select) */
 select {
-	width: 200px;
-	padding: 16px 20px;
+	width: 273px;
 	border: none;
-	border-radius: 4px;
 	background-color: rgb(0, 83, 128);
 	color: white;
   }
