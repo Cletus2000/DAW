@@ -34,84 +34,162 @@
     <main>
         <h1>Solicitud de album</h1>
         <section>
-            <table border="1">
+            <table>
                 <caption>Tabla de precios</caption>
                     <tr>
                         <!--    quitar scopes   -->
-                        <th scope="row"> Concepto</th>
-                        <th scope="col">Tarifa</th>
+                        <th> Concepto</th>
+                        <th>Tarifa</th>
                     </tr>
                     <tr>
-                        <td scope="row"> &lt; 5 páginas</th>
-                        <td scope="col">7456713645988374061 bolivares por pág.</th>
+                        <td> &lt; 5 páginas</td>
+                        <td> 7456713645988374061 bolivares por pág.</td>
                     </tr>
                     <tr>
-                        <td scope="row"> 5 - 10 páginas</th>
-                        <td scope="col">05984670294 bolivares por pág.</th>
+                        <td> 5 - 10 páginas</td>
+                        <td> 5984670294 bolivares por pág.</td>
                     </tr>
                     <tr>
-                        <td scope="row"> &gt; 10 páginas</th>
-                        <td scope="col">74567457 bolivares por pág.</th>
+                        <td> &gt; 10 páginas</td>
+                        <td> 74567457 bolivares por pág.</td>
                     </tr>
                     <tr>
-                        <td scope="row"> Blanco y negro </th>
-                        <td scope="col"> Sin coste adicional </th>
+                        <td> Blanco y negro </td>
+                        <td> Sin coste adicional </td>
                     </tr>
                     <tr>
-                        <td scope="row"> Color </th>
-                        <td scope="col">2945368290364 bolivares por foto</th>
+                        <td> Color </td>
+                        <td> 2945368290364 bolivares por foto</td>
                     </tr>
                     <tr>
-                        <td scope="row"> Resolución &gt; 300dpi</th>
-                        <td scope="col"> 3184765 bolivares por foto</th>
+                        <td> Resolución &gt; 300dpi</td>
+                        <td> 3184765 bolivares por foto</td>
                     </tr>
                 </table>
         </section>
         <section>
             <form action="album_confirmed.html"> <!--Acuerdate que aqui va el nombre de el archivo respuesta -->
-                <p>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu album</p>
-                <p><label for="nombreDest">Nombre destinatario: </label>
-                    <input type="text" name="nombreDest" id="nombreDest" required maxlength="200"> (*)</p> <!--Nombre del destinatario-->
-                <p><label for="tituloAlb">Título album: </label>
-                    <input type="text" name="tituloAlb" id="tituloAlb" required maxlength="200"> (*)</p> <!--Título del album-->
-                <p><label for="descr">Texto adicional: </label>
-                    <textarea name="descr" id="dedscr" maxlength="4000"></textarea></p> <!--Descripcion-->
-                <p><label for="email">Correo electrónico: </label>
-                    <input type="text" name="email" id="email" required maxlength="200"> (*) </p> <!--Email-->
-                <p><label for="street">Dirección: </label> 
-                    <input type="text" name="street" id="street" placeholder="Calle"> 
-                    <input type="number" name="num" id="num" placeholder="Numero"> 
-                    <input type="text" name="cp" id="cp" placeholder="CP"> 
-                    <select id="loc" placeholder="Localidad">
-                        <option value="1">Alicante</option>
-                        <option value="2">Juan</option>
-                    </select>
-                    <select id="prov" placeholder="Provincia">
-                        <option value="1">Alicante</option>
-                        <option value="2">Bogota</option>
-                    </select>
-                    (*)</p> <!--Dirección     mirar field set para agrupar la direccion-->
-                <p><label for="tele">Telefono: </label>
-                    <input type="tel" name="tele" id="tele"></p> <!--Telefono-->
-                <p><label for="col">Color portada: </label>
-                    <input type="color" name="col" id="col"></p> <!--Color portada-->
-                <p><label for="numcopies">Numero de copias: </label>
-                    <input type="number" name="numcopies" id="numcopies" value="1" min="1" max="99"></p> <!--Numero de copias-->
+                <table>
+                    <caption>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu album</caption>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="nombreDest">Nombre destinatario: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="text" name="nombreDest" id="nombreDest" required maxlength="200"> (*) <!--Nombre del destinatario-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="tituloAlb">Título album: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="text" name="tituloAlb" id="tituloAlb" required maxlength="200"> (*) <!--Título del album-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="descr">Texto adicional: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <textarea name="descr" id="dedscr" maxlength="4000"></textarea> <!--Descripcion-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="email">Correo electrónico: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="text" name="email" id="email" required maxlength="200"> (*) <!--Email-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="street">Dirección: </label> 
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="text" name="street" id="street" placeholder="Calle">
+                            <br>
+                            <input type="number" name="num" id="num" placeholder="Numero">
+                            <br>
+                            <input type="text" name="cp" id="cp" placeholder="CP">
+                            <br>
+                            <select id="loc" placeholder="Localidad">
+                                <option value="1">Alicante</option>
+                                <option value="2">Juan</option>
+                            </select>
+                            <br>
+                            <select id="prov" placeholder="Provincia">
+                                <option value="1">Alicante</option>
+                                <option value="2">Bogota</option>
+                            </select>
+                            (*)</p> <!--Dirección     mirar field set para agrupar la direccion-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="tele">Telefono: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="tel" name="tele" id="tele"> <!--Telefono-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="col">Color portada: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="color" name="col" id="col"> <!--Color portada-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="numcopies">Numero de copias: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="number" name="numcopies" id="numcopies" value="1" min="1" max="99"> <!--Numero de copias-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="impres">Resolución de impresión: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="number" name="impres" id="impres" min="150" max="900" step="150" value="150"> (*) <!--Resolución de impresión-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="myAlb">Album de PI: </label> 
+                        </td>
+                        <td class="campoRellenable">
+                            <select id="myAlb">
+                                <option value="1">Minions</option> 
+                                <option value="2">China</option>
+                                <option value="3">Spiderman</option> 
+                                <option value="4">El Luisma</option>
+                            </select>
+                            (*) </p> <!--Album de PI-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="recdate">Fecha de recepcion: </label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="date" name="recdate" id="recdate"> <!--Fecha de recepcion-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nombreCampo">
+                            <label for="color">Impresion a color</label>
+                        </td>
+                        <td class="campoRellenable">
+                            <input type="checkbox" name="color" id="color">
+                        </td>
+                    </tr>
+                </table>
 
-                <p><label for="impres">Resolución de impresión: </label>
-                    <input type="number" name="impres" id="impres" min="150" max="900" step="150" value="150"> (*) </p> <!--Resolución de impresión-->
-                <p><label for="myAlb">Album de PI: </label> 
-                    <select id="myAlb">
-                        <option value="1">Minions</option> 
-                        <option value="2">China</option>
-                        <option value="3">Spiderman</option> 
-                        <option value="4">El Luisma</option>
-                    </select>
-                    (*) </p> <!--Album de PI-->
-                <p><label for="recdate">Fecha de recepcion: </label>
-                    <input type="date" name="recdate" id="recdate"></p> <!--Fecha de recepcion-->
-                <p><label for="color">Impresion a color</label>
-                    <input type="checkbox" name="color" id="color"></p>
                 
                 <input type="submit" value="Enviar"/>
 
