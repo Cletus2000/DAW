@@ -13,8 +13,8 @@
 	--color1: #777;
 	--color2: #FFFFFC;
 	--color3: #EEEEEE;
-	--color4: #rgb(0, 83, 128);
-	--color5: #0056B3;
+	--color4: #0077b7;
+	--color5: #004275;
 	--color6: #EEEEEE;
 	--color7: #CCCCCC;
 }
@@ -22,18 +22,17 @@
 *{	/* asterisco es para todo */
 	font-family: 'Josefin Sans', sans-serif;
 }
+	img{
+		border-radius: 25%;
+	}
 
-img{
-	border-radius: 25%;
-}
 
 body {
 	margin: 5px;
 	background-color: var(--color1);
 }
 
-/*-----Cabecera-----*/
-
+/*     -----CABECERA-----     */
 header {
     background-color: var(--color2);
 	border-radius: 20px;
@@ -43,124 +42,138 @@ header {
 	vertical-align: middle;
 }
 
-/* Estilo para el título */
-.title {
-	text-align: center;
-    background-color: var(--color2);
-    border-radius: 20px;
-    display: inline-block;
-    padding: 10px 20px; /* Ajusta el espaciado según sea necesario */
-    color: #0056B3; /* Cambia el color del texto según sea necesario */
-    text-decoration: none; /* Quita el subrayado de los enlaces */
-	margin-left: 0;
-}
+/* Estilo para el logo de la pagina */
+	.title {
+		display: inline-block;
+		padding: 10px 20px;
+		color: #0056B3;
+		text-decoration: none;
+		font-size: 50px;
+	}
 
-/* Estilo para el menú */
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-}
+			/* Estilo para el menú */
+			nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
 
-nav ul li {
-    display: inline;
-    margin: 0 10px; /* Ajusta el espaciado según sea necesario */
-}
+			nav ul li {
+				display: inline;
+				margin: 0 10px;
+			}
 
-nav a {
-    text-decoration: none;
-    color: black;
-    display: inline-block; /* Añade para que los enlaces tengan un tamaño y forma */
-    padding: 10px 20px;
-    background-color: var(--color4); /* Color de fondo azul */
-    border-radius: 5px; /* Añade bordes redondeados */
-    transition: all 0.3s; /* Transición suave de 0.3 segundos */
-    font-weight: bold;
-}
+			nav ul li a {
+				text-decoration: none;
+				color: black;
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: var(--color4);
+				border-radius: 5px;
+				transition: all 0.3s;
+				font-weight: bold;
+			}
 
-nav a:hover {
-    background-color: var(--color5); /* Color de fondo azul oscuro al pasar el ratón */
-    color: white; /* Texto en blanco al pasar el ratón */
-    transform: scale(1.1); /* Hace que el botón sea un poco más grande al pasar el ratón */
-}
+			nav a:hover {
+				background-color: var(--color5);
+				color: white;
+				transform: scale(1.1);
+			}
 
-
-/* Resetting default margin and padding for some elements */
-body, h1, h2, section {
-    margin: 0;
-    padding: 0;
-}
-
-/* Center the 'h1' element */
+/*     -----MAIN-----     */
 h1 {
-    text-align: center;
-    margin-top: 20px; /* You can adjust the margin as needed */
-}
-
-/* div contenedor de los articulos en index */
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill	, minmax(300px, 1fr)); /* Maximum 3 columns, each with a minimum width of 300px */
-    gap: 10px; /* Adjust the gap between items as needed */
-    justify-items: center; /* Center items horizontally within each grid cell */
-}
-
-article {
-    border: 1px solid #ccc;
-    padding: 20px;
-    text-align: center;
-}
-
-article img {
-    width: 100px; /* Adjust the image size as needed */
-    height: 100px;
-}
-
-
-footer{	
-	display: flex;
-	justify-content: space-between;
-	padding: 0.5em;
-	padding-left: 1em;
-	padding-right: 1em;
-	background-color: var(--color7);
-	border-radius: 25px;
-}
-
-
-main section{
-	display: flex;
-	flex-direction: column;
 	text-align: center;
-	justify-content: center;
-	align-items: center;
-	border-radius: 1em;
-	background-color: var(--color3);
-	margin: 1em;
-	padding: 1em;
 }
+	h2{
+		margin: 5px;
+		margin-bottom: 15px;
+	}
+
+	main section{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		border-radius: 1em;
+		background-color: var(--color3);
+		margin: 1em;
+		padding: 1em;
+	}
+
+	
+	/* div contenedor de los articulos en index */
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(200px, 1fr)); /* Numero de columnas, lo cambiaremos con media queries*/
+		gap: 40px;
+		justify-content: center;
+	}
+		@media (max-width: 1400px) {
+			.grid-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px; /* Espacio entre elementos */
+			}
+			
+			article {
+				flex: 0 0 calc(33.33% - 10px); /* 3 elementos en la primera fila (33.33% de ancho con espacio entre) */
+				border: 1px solid #ccc; /* Bordes para los elementos */
+				padding: 10px; /* Espacio interior para los elementos */
+				box-sizing: border-box;
+			}
+			
+			/* Cambio a 2 elementos en la segunda fila */
+			article:nth-child(n+4) {
+				flex: 0 0 calc(50% - 10px); /* 2 elementos en la segunda fila (50% de ancho con espacio entre) */
+			}
+		}
+
+		@media (max-width: 850px) {
+			.grid-container {
+				flex-direction: column;
+			}
+			article {
+				width: 300px;
+			}
+		}
+	
+		article {
+			text-align: center;
+			border: 1px solid #ccc;
+			padding: 20px;
+		}
+		article label {
+			white-space: wrap;
+			max-width: 100%;
+		}
+
+		article img {
+			max-width: 200px;
+			max-height: 200px;
+			width: auto;
+			height: auto;
+		}
+
 
 
 /*-----Tablas-----*/
-	/* Estilo para el título de la columna */
+	/* Títulos de la columnas */
 	th {
-	background-color: rgb(0, 83, 128); /* Fondo azul */
-	color: white; /* Fuente blanca */
+		background-color: rgb(0, 83, 128);
+		color: white;
 	}
 
-	/* Estilo para las demás celdas de la tabla */
+	/* Las demás celdas de la tabla */
 	td {
-	background-color: var(--color3); /* Fondo azul */
-	color: rgb(0, 83, 128); /* Fondo blanco */
-	border-bottom: 1px solid #ccc;
+		background-color: var(--color3);
+		color: rgb(0, 83, 128);
+		border-bottom: 1px solid #ccc; /*Separador de campos*/
 	}
 
-/*-----Formularios-----*/
-/* Estilo para el contenedor del formulario */ 
-  /* Estilo para el formulario (ajustado para hacerlo más pequeño) */
-  
 
+/*     -----FORMULARIOS-----     */
 .nombreCampo{
 	text-align: right;
 }
@@ -169,55 +182,53 @@ main section{
 	box-sizing: border-box;
 	vertical-align: middle;
 }
-  
+	label {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	/* Estilo para los campos de texto */
+	input, textarea, select, .boton {
+		width: 250px;
+		padding: 10px;
+		margin: 5px 0;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		resize: none;
+	}
+	select {
+		width: 273px;
+		border: none;
+		background-color: rgb(0, 83, 128);
+		color: white;
+	}
 
-/* Estilo para los campos de texto */
-input, textarea, select, .boton {
-  width: 250px;
-  padding: 10px;
-  margin: 5px 0;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  resize: none;
-}
-
-/* Estilo para las áreas de texto (textarea) */
-
-
-/* Estilo para los selectores desplegables (select) */
-select {
-	width: 273px;
-	border: none;
-	background-color: rgb(0, 83, 128);
-	color: white;
-  }
-
-  /* Estilo para las opciones cuando el mouse está sobre ellas */
-select option:hover {
-	background-color: rgb(0, 83, 128); /* Cambia a tu color deseado */
-	color: white; /* Cambia al color de texto deseado */
-  }
+	/* Este no va bien y no se porque */
+	select option:hover {
+		background-color: rgb(0, 83, 128); /* Cambia a tu color deseado */
+		color: white; /* Cambia al color de texto deseado */
+	}
+	input[type="color"] {
+		padding: 5px;
+		margin-left: 10px;
+	}
+	.boton, input[type=button], input[type=submit], input[type=reset] {
+		background-color:rgb(0, 83, 128);
+		border: none;
+		color: white;
+		margin: 5px;
+		cursor: pointer;
+		text-decoration: none;
+	}
 
 
 
-/* Estilo para el selector de color (input[type="color"]) */
-input[type="color"] {
-  padding: 5px;
-  margin-left: 10px;
-}
-
-
-/* Estilo para las etiquetas de los checkboxes */
-label {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-input[type=button], input[type=submit], input[type=reset], .boton {
-	background-color:rgb(0, 83, 128);
-	border: none;
-	color: white;
-	margin: 5px;
-	cursor: pointer;
-	text-decoration: none;
+footer{	
+	margin: 0px 15px;
+	padding: 0em 2em;
+	background-color: var(--color7);
+	border-radius: 25px;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	align-items: center;
 }
