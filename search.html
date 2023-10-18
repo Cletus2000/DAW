@@ -39,24 +39,48 @@
     <main>
         
         <h1>Formulario búsqueda</h1>
+        <section>
             <form action="results.html">
-                
-                <p><label for="tituloPubli">Título de la publicación: </label> <input type="text" name="tituloPubli" id="tituloPubli"></p> <!--Título-->
-                <p><label for="fechaPubli">Fecha de la publicación: </label> <input type="date" name="fechaPubli" id="fechaPubli"></p> <!--Fecha-->
-                <p><label for="paisPubli">Pais:</label> <select  name="paisPubli" id="paisPubli"> <!--Pais-->
-                    <option value="1">Alemania</option> 
-                    <option value="2">China</option>
-                    <option value="3">España</option>
-                    <option value="4">Estados Unidos</option>
-                    <option value="5">Francia</option>
-                    <option value="6">Grecia</option>
-                    <option value="7">Italia</option>
-                    <option value="8">México</option>
-                    <option value="9">Rusia</option>
-                    <option value="10">Ucrania</option>
-                </select>            
-                <p><input type="submit" value="BUSCAR"></p>
+                <table>
+                    <tr>
+                        <td>
+                            <label for="tituloPubli">Título de la publicación: </label>
+                        </td>
+                        <td>
+                            <input type="text" id="tituloPubli">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="fechaPubli">Fecha de la publicación: </label>
+                        </td>
+                        <td>
+                            <input type="date" id="fechaPubli">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="paisPubli">Pais:</label>
+                        </td>
+                        <td>
+                            <select id="paisPubli">
+                                <option value="1">Alemania</option> 
+                                <option value="2">China</option>
+                                <option value="3">España</option>
+                                <option value="4">Estados Unidos</option>
+                                <option value="5">Francia</option>
+                                <option value="6">Grecia</option>
+                                <option value="7">Italia</option>
+                                <option value="8">México</option>
+                                <option value="9">Rusia</option>
+                                <option value="10">Ucrania</option>
+                            </select>            
+                        </td>
+                    </tr>
+                </table>
+                <input type="submit" value="BUSCAR">
             </form>
+        </section>
     </main>
         
     

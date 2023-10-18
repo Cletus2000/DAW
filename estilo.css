@@ -131,8 +131,10 @@ footer{
 
 main section{
 	display: flex;
+	flex-direction: column;
 	text-align: center;
 	justify-content: center;
+	align-items: center;
 	border-radius: 1em;
 	background-color: var(--color3);
 	margin: 1em;
@@ -151,6 +153,7 @@ main section{
 	td {
 	background-color: var(--color3); /* Fondo azul */
 	color: rgb(0, 83, 128); /* Fondo blanco */
+	border-bottom: 1px solid #ccc;
 	}
 
 /*-----Formularios-----*/
@@ -160,18 +163,16 @@ main section{
 
 .nombreCampo{
 	text-align: right;
-	border-bottom: 1px solid #ccc;
 }
 .campoRellenable{
 	text-align: left;
 	box-sizing: border-box;
 	vertical-align: middle;
-	border-bottom: 1px solid #ccc;
 }
   
 
 /* Estilo para los campos de texto */
-input, textarea, select {
+input, textarea, select, .boton {
   width: 250px;
   padding: 10px;
   margin: 5px 0;
@@ -212,91 +213,11 @@ label {
   margin-right: 10px;
 }
 
-input[type=button], input[type=submit], input[type=reset] {
+input[type=button], input[type=submit], input[type=reset], .boton {
 	background-color:rgb(0, 83, 128);
 	border: none;
 	color: white;
 	margin: 5px;
 	cursor: pointer;
+	text-decoration: none;
 }
-  
-
-
-/*-----Media queries-----*/
-	/*Mediaquery de ejemplo*/
-	@media (condicion1) and (condicion2)
-	{
-		/*estilos*/
-	}
-	@media all and (min-width: 480px){
-		/*-----Cabecera-----*/
-		body > header{/*cambia la posicion de los elementos de la cabecera*/
-			display: grid;
-			grid-template-areas: "logo h1"
-								 "logo p";
-			justify-content: center;
-			grid-column-gap: 1em; 
-		}
-
-			body > header > h1{
-				grid-area: h1;
-			}
-			body > header > p{
-				grid-area: p;
-			}
-			body > header > img{
-				grid-area: logo;
-			}
-	
-			/*-----Menu-----*/
-			body > nav > label{
-				display: none; 
-			}
-			body > nav > input{
-				display: none; 
-			}
-	
-			body > nav{
-				background-color: #0000;
-			display: flex;
-			}
-			body> nav > ul{
-				left: 0;
-				display: flex;
-			}
-				body > nav > ul > li > a > span:nth-of-type(2){
-					/*escondemos el segundo span: el que contiene los nombres de los botones*/
-					display: none;
-				}
-			/*-----Articulos------*/
-			#botonMenu{
-				display: none;
-			}
-			#botonMenu + ul{
-				display: flex;
-				left: 0%;
-			}
-
-			#botonMenu:checked + ul{
-				display: flex;
-				left: 0%;
-			}
-	
-	}
-	@media all and (min-width: 600px){
-		body > nav > ul > li > a > span:nth-of-type(2){/*seleccionamos el segundo span*/
-			display: inline-block;/*volvemos a mostrar el segundo span*/
-		}
-		.comentarios>ul>li{
-			display: flex;
-		}
-	}
-	@media all and (max-width: 700px){
-		.noticia>footer{
-			display: grid;
-			justify-content: center;
-		}
-		.noticia>footer>a{
-			margin: 5px;
-		}
-	}
