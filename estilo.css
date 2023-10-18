@@ -13,7 +13,7 @@
 	--color1: #777;
 	--color2: #FFFFFC;
 	--color3: #EEEEEE;
-	--color4: #0074D9;
+	--color4: #rgb(0, 83, 128);
 	--color5: #0056B3;
 	--color6: #EEEEEE;
 	--color7: #CCCCCC;
@@ -149,7 +149,7 @@ main section{
 
 	/* Estilo para las demás celdas de la tabla */
 	td {
-	background-color: rgb(249, 249, 249); /* Fondo azul */
+	background-color: var(--color3); /* Fondo azul */
 	color: rgb(0, 83, 128); /* Fondo blanco */
 	}
 
@@ -160,11 +160,13 @@ main section{
 
 .nombreCampo{
 	text-align: right;
+	border-bottom: 1px solid #ccc;
 }
 .campoRellenable{
 	text-align: left;
 	box-sizing: border-box;
 	vertical-align: middle;
+	border-bottom: 1px solid #ccc;
 }
   
 
@@ -191,37 +193,18 @@ select {
 
   /* Estilo para las opciones cuando el mouse está sobre ellas */
 select option:hover {
-	background-color: rgb(1, 74, 114); /* Cambia a tu color deseado */
+	background-color: rgb(0, 83, 128); /* Cambia a tu color deseado */
 	color: white; /* Cambia al color de texto deseado */
   }
 
-/* Estilo para los selectores de fecha (input[type="date"]) */
-input[type="date"] {
-  width: 110px;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border: 2px solid #ccc;
-  border-radius: 4px;	
-  background-color: white;
-  color: #333;
-}
+
 
 /* Estilo para el selector de color (input[type="color"]) */
 input[type="color"] {
-  width: 50px;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 5px;
+  margin-left: 10px;
 }
 
-/* Estilo para los checkboxes */
-input[type="checkbox"] {
-  margin: 5px 0;
-  margin-right: 5px;
-  vertical-align: middle;
-}
 
 /* Estilo para las etiquetas de los checkboxes */
 label {
@@ -233,11 +216,9 @@ input[type=button], input[type=submit], input[type=reset] {
 	background-color:rgb(0, 83, 128);
 	border: none;
 	color: white;
-	padding: 16px 32px;
-	text-decoration: none;
-	margin: 4px 2px;
+	margin: 5px;
 	cursor: pointer;
-  }
+}
   
 
 
