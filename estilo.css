@@ -106,28 +106,27 @@ article img {
 
 
 /*Footer de informacion*/
-	body > footer{	
+	footer{	
 		display: flex;
 		justify-content: space-between;
 		padding: 0.5em;
 		padding-left: 1em;
 		padding-right: 1em;
-		
 		background-color: var(--color7);
-
 		border-radius: 25px;
-		
 	}
 
 
 main>section{
+	display: flex;
 	text-align: center;
 	justify-content: center;
 	border-radius: 1em;
 	background-color: var(--color3);
 	margin: 1em;
-	padding: 1px 0px;
+	padding: 1em;
 }
+
 .Buscador{
 	display: grid;
 	text-align: center;
@@ -436,31 +435,21 @@ main>section{
 /*-----Formularios-----*/
 /* Estilo para el contenedor del formulario */ 
   /* Estilo para el formulario (ajustado para hacerlo más pequeño) */
-  section{
-	width: 100%; /* Ajusta el ancho del formulario según tus necesidades */
-	background-color: #fff; /* Fondo blanco */
-	padding: 20px;
-	border: 1px solid #ccc;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	text-align: center;
-	justify-content: center;
-	border-radius: 1em;
-	background-color: var(--color3);
-	margin: 1em;
-	padding: 1px 0px;
-  }
+  
+
+.nombreCampo{
+	text-align: right;
+}
+.campoRellenable{
+	text-align: left;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
   
 
 /* Estilo para los campos de texto */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="number"],
-input[type="date"],
-input[tpe="tel"],
-input[type="number"],
-input[type="color"] {
+input,
+select {
   width: 250px;
   padding: 10px;
   margin: 5px 0;
