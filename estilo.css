@@ -13,7 +13,7 @@
 	--color1: #777;
 	--color2: #FFFFFC;
 	--color3: #EEEEEE;
-	--color4: #0077b7;
+	--color4: #0EB1F4;
 	--color5: #004275;
 	--color6: #EEEEEE;
 	--color7: #CCCCCC;
@@ -46,7 +46,7 @@ header {
 	.title {
 		display: inline-block;
 		padding: 10px 20px;
-		color: #0056B3;
+		color: var(--color4);
 		text-decoration: none;
 		font-size: 50px;
 	}
@@ -111,11 +111,11 @@ h1 {
 		gap: 40px;
 		justify-content: center;
 	}
-		@media (max-width: 1400px) {
+		@media (max-width: 1400px) { /*Cambiar los tamaños para los estandares movil y tablet*/
 			.grid-container {
 				display: flex;
 				flex-wrap: wrap;
-				gap: 10px; /* Espacio entre elementos */
+				gap: 10px; /* Espacio entre elementos */ /*en flex el gap no hace nada*/
 			}
 			
 			article {
