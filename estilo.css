@@ -5,10 +5,12 @@
 		1 Fondo de todo
 		2 Fondo del head
 		3 Fondo del titulo
-		4 Botones
+		4 Botones header
 		5 Hover en botones (falta desplegable)
 		6 Fondo articulos
-		7 Footer*/
+		7 Footer
+		8 Botones*/
+
 
 	--color1: #777;
 	--color2: #FFFFFC;
@@ -17,6 +19,7 @@
 	--color5: #004275;
 	--color6: #EEEEEE;
 	--color7: #CCCCCC;
+	--color8: #005380;
 }
 
 *{	/* asterisco es para todo */
@@ -162,14 +165,14 @@ h1 {
 /*-----Tablas-----*/
 	/* Títulos de la columnas */
 	th {
-		background-color: rgb(0, 83, 128);
+		background-color: var(--color8);
 		color: white;
 	}
 
 	/* Las demás celdas de la tabla */
 	td {
 		background-color: var(--color3);
-		color: rgb(0, 83, 128);
+		color: var(--color8);
 		border-bottom: 1px solid #ccc; /*Separador de campos*/
 	}
 
@@ -199,13 +202,13 @@ h1 {
 	select {
 		width: 273px;
 		border: none;
-		background-color: rgb(0, 83, 128);
+		background-color: var(--color8);
 		color: white;
 	}
 
 	/* Este no va bien y no se porque */
 	select option:hover {
-		background-color: rgb(0, 83, 128); /* Cambia a tu color deseado */
+		background-color: var(--color8); /* Cambia a tu color deseado */
 		color: white; /* Cambia al color de texto deseado */
 	}
 	input[type="color"] {
@@ -213,7 +216,7 @@ h1 {
 		margin-left: 10px;
 	}
 	.boton, input[type=button], input[type=submit], input[type=reset] {
-		background-color:rgb(0, 83, 128);
+		background-color:var(--color8);
 		border: none;
 		color: white;
 		margin: 5px;
