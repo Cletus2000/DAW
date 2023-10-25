@@ -1,0 +1,238 @@
+
+/*Variables de colores*/
+:root {
+	/*
+		1 Fondo de todo
+		2 Fondo del head
+		3 Fondo del titulo
+		4 Botones header
+		5 Hover en botones (falta desplegable)
+		6 Fondo articulos
+		7 Footer
+		8 Botones*/
+
+
+	--color1: #777;
+	--color2: #FFFFFC;
+	--color3: #EEEEEE;
+	--color4: #0EB1F4;
+	--color5: #004275;
+	--color6: #EEEEEE;
+	--color7: #CCCCCC;
+	--color8: #005380;
+}
+
+*{	/* asterisco es para todo */
+	font-family: 'Josefin Sans', sans-serif;
+}
+	img{
+		border-radius: 25%;
+	}
+
+
+body {
+	margin: 5px;
+	background-color: var(--color1);
+}
+
+/*     -----CABECERA-----     */
+header {
+    background-color: var(--color2);
+	border-radius: 20px;
+    text-align: center;
+    margin: 10px;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+/* Estilo para el logo de la pagina */
+	.title {
+		display: inline-block;
+		padding: 10px 20px;
+		color: var(--color4);
+		text-decoration: none;
+		font-size: 50px;
+	}
+
+			/* Estilo para el menú */
+			nav ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				text-align: center;
+			}
+
+			nav ul li {
+				display: inline;
+				margin: 0 10px;
+			}
+
+			nav ul li a {
+				text-decoration: none;
+				color: black;
+				display: inline-block;
+				padding: 10px 20px;
+				background-color: var(--color4);
+				border-radius: 5px;
+				transition: all 0.3s;
+				font-weight: bold;
+				margin-bottom: 5px;
+			}
+
+			nav a:hover {
+				background-color: var(--color5);
+				color: white;
+				transform: scale(1.1);
+			}
+
+/*     -----MAIN-----     */
+h1 {
+	text-align: center;
+}
+	h2{
+		margin: 5px;
+		margin-bottom: 15px;
+	}
+
+	main section{
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		justify-content: center;
+		align-items: center;
+		border-radius: 1em;
+		background-color: var(--color3);
+		margin: 1em;
+		padding: 1em;
+	}
+
+	
+	/* div contenedor de los articulos en index */
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(200px, 1fr)); /* Numero de columnas, lo cambiaremos con media queries*/
+		gap: 40px;
+		justify-content: center;
+	}
+		@media (max-width: 1400px) { /*Cambiar los tamaños para los estandares movil y tablet*/
+			.grid-container {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 10px; /* Espacio entre elementos */ /*en flex el gap no hace nada*/
+			}
+			
+			article {
+				flex: 0 0 calc(33.33% - 10px); /* 3 elementos en la primera fila (33.33% de ancho con espacio entre) */
+				border: 1px solid #ccc; /* Bordes para los elementos */
+				padding: 10px; /* Espacio interior para los elementos */
+				box-sizing: border-box;
+			}
+			
+			/* Cambio a 2 elementos en la segunda fila */
+			article:nth-child(n+4) {
+				flex: 0 0 calc(50% - 10px); /* 2 elementos en la segunda fila (50% de ancho con espacio entre) */
+			}
+		}
+
+		@media (max-width: 850px) {
+			.grid-container {
+				flex-direction: column;
+			}
+			article {
+				width: 300px;
+			}
+		}
+	
+		article {
+			text-align: center;
+			border: 1px solid #ccc;
+			padding: 20px;
+		}
+		article label {
+			white-space: wrap;
+			max-width: 100%;
+		}
+
+		article img {
+			max-width: 200px;
+			max-height: 200px;
+			width: auto;
+			height: auto;
+		}
+
+
+
+/*-----Tablas-----*/
+	/* Títulos de la columnas */
+	th {
+		background-color: var(--color8);
+		color: white;
+	}
+
+	/* Las demás celdas de la tabla */
+	td {
+		background-color: var(--color3);
+		color: var(--color8);
+		border-bottom: 1px solid #ccc; /*Separador de campos*/
+	}
+
+
+/*     -----FORMULARIOS-----     */
+.nombreCampo{
+	text-align: right;
+}
+.campoRellenable{
+	text-align: left;
+	box-sizing: border-box;
+	vertical-align: middle;
+}
+	label {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	/* Estilo para los campos de texto */
+	input, textarea, select, .boton {
+		width: 250px;
+		padding: 10px;
+		margin: 5px 0;
+		border: 2px solid #ccc;
+		border-radius: 4px;
+		resize: none;
+	}
+	select {
+		width: 273px;
+		border: none;
+		background-color: var(--color8);
+		color: white;
+	}
+
+	/* Este no va bien y no se porque */
+	select option:hover {
+		background-color: var(--color8); /* Cambia a tu color deseado */
+		color: white; /* Cambia al color de texto deseado */
+	}
+	input[type="color"] {
+		padding: 5px;
+		margin-left: 10px;
+	}
+	.boton, input[type=button], input[type=submit], input[type=reset] {
+		background-color:var(--color8);
+		border: none;
+		color: white;
+		margin: 5px;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+
+
+footer{	
+	margin: 0px 15px;
+	padding: 0em 2em;
+	background-color: var(--color7);
+	border-radius: 25px;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	align-items: center;
+}
