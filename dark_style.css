@@ -1,4 +1,3 @@
-
 /*Variables de colores*/
 :root {
 	/*
@@ -7,27 +6,33 @@
 		3 Fondo del titulo
 		4 Botones header
 		5 Hover en botones (falta desplegable)
-		6 Fondo articulos
+		6 Fondo inputs
 		7 Footer
-		8 Botones*/
+		8 Botones
+        9 Letra */
 
 
-	--color1: #777;
-	--color2: #FFFFFC;
-	--color3: #EEEEEE;
-	--color4: #0EB1F4;
-	--color5: #004275;
-	--color6: #EEEEEE;
-	--color7: #CCCCCC;
-	--color8: #005380;
+	--color1: #111111;
+	--color2: #3a3a3a;
+	--color3: #3a3a3a;
+	--color4: #ababab;
+	--color5: #000;
+	--color6: #292929;
+	--color7: #3a3a3a;
+	--color8: #1a1a1a;
+    --color9: #cccccc;
 }
 
 *{	/* asterisco es para todo */
 	font-family: 'Josefin Sans', sans-serif;
+    color: var(--color9);
 }
 	img{
 		border-radius: 25%;
 	}
+    .precios td{
+        background-color: var(--color9);
+    }
 
 
 body {
@@ -198,6 +203,7 @@ h1 {
 		border: 2px solid #ccc;
 		border-radius: 4px;
 		resize: none;
+        background-color: var(--color6);
 	}
 	select {
 		width: 273px;
