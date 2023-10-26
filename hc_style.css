@@ -23,7 +23,8 @@
 }
 
 *{	/* asterisco es para todo */
-	font-family: 'Josefin Sans', sans-serif;
+	/*font-family: 'Josefin Sans', sans-serif;*/
+	font-family: 'Sometype Mono', monospace;
 }
 	img{
 		border-radius: 25%;

@@ -1,0 +1,85 @@
+/*Variables de colores*/
+:root {
+	--color1: black;  /* Fondo en impresión */
+	--color2: white;  /* Fondo del head en impresión */
+	--color3: white;  /* Fondo del título en impresión */
+	--color4: black;  /* Color de texto en impresión */
+	--color5: blue;   /* Color de enlaces en impresión */
+	--color6: white;  /* Fondo de los artículos en impresión */
+	--color7: white;  /* Fondo del footer en impresión */
+	--color8: black;  /* Color de botones en impresión */
+}
+
+/* Estilo de impresión */
+@media print {
+	body {
+		background-color: var(--color1);
+		color: var(--color4);
+	}
+
+	header {
+		background-color: var(--color2);
+	}
+
+	.title {
+		color: var(--color4);
+	}
+
+	nav ul li a {
+		color: var(--color4);
+		background-color: transparent;
+	}
+
+	nav a:hover {
+		background-color: transparent;
+		color: var(--color5);
+		transform: none;
+	}
+
+	h1, h2 {
+		color: var(--color4);
+	}
+
+	main section {
+		background-color: var(--color3);
+		color: var(--color4);
+	}
+
+	/* Elimina las imágenes */
+	img {
+		display: none;
+	}
+
+	/* Elimina elementos de navegación */
+	nav {
+		display: none;
+	}
+
+	/* Elimina elementos dinámicos y formularios */
+	script, object, embed, input, select, textarea, button {
+		display: none;
+	}
+
+	/* Estilo para enlaces en impresión */
+	a {
+		text-decoration: underline;
+		color: var(--color5);
+	}
+
+	h1, h2, p, a, label, th, td, input, textarea, select, .boton, article, address, time {
+		font-family: serif;
+	}
+
+
+	/* Mostrar URL de los enlaces */
+	a::after {
+		content: " (" attr(href) ")";
+	}
+
+	/* Reglas específicas para impresión */
+	@page {
+		size: A4;
+		margin: 1cm;
+	}
+
+}
