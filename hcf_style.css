@@ -24,7 +24,7 @@
 
 *{	/* asterisco es para todo */
 	font-family: 'Josefin Sans', sans-serif;
-	font-size: 22px;
+	font-size: 24px;
 }
 	img{
 		border-radius: 25%;
@@ -89,11 +89,13 @@ header {
 /*     -----MAIN-----     */
 h1 {
 	text-align: center;
+	font-size: 44px;
 	color: var(--color2);
 }
 	h2{
 		margin: 5px;
 		margin-bottom: 15px;
+		font-size: 44px;
 	}
 
 	main section{
