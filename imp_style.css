@@ -45,7 +45,7 @@
 		color: var(--color4);
 	}
 
-	/* Elimina las imágenes */
+	/* Elimina las imágenes 
 	img {
 		display: none;
 	}
