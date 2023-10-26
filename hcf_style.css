@@ -12,18 +12,19 @@
 		8 Botones*/
 
 
-	--color1: #777;
-	--color2: #FFFFFC;
-	--color3: #EEEEEE;
-	--color4: #0EB1F4;
-	--color5: #004275;
-	--color6: #EEEEEE;
-	--color7: #CCCCCC;
-	--color8: #005380;
+	--color1: #4e4e4e;
+	--color2: #ffffff;
+	--color3: #f5f5f5;
+	--color4: #087FAE;
+	--color5: #003055;
+	--color6: #f5f5f5;
+	--color7: #dddddd;
+	--color8: #003055;
 }
 
 *{	/* asterisco es para todo */
 	font-family: 'Josefin Sans', sans-serif;
+	font-size: 22px;
 }
 	img{
 		border-radius: 25%;
@@ -88,6 +89,7 @@ header {
 /*     -----MAIN-----     */
 h1 {
 	text-align: center;
+	color: var(--color2);
 }
 	h2{
 		margin: 5px;
