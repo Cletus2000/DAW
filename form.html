@@ -5,16 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario registro</title>
     <link href="style.css" rel="stylesheet" />
-        <link rel="alternate stylesheet" type="text/css" href="dark_style.css" title="Estilo oscuro" />
-        <link rel="alternate stylesheet" type="text/css" href="hf_style.css" title="Estilo de high font" />
-        <link rel="alternate stylesheet" type="text/css" href="hc_style.css" title="Estilo de high contrast" />
-        <link rel="alternate stylesheet" type="text/css" href="hcf_style.css" title="Estilo de high font & contrast" />
-        <link rel="stylesheet" type="text/css" href="imp_style.css" media="print" />
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
     </style>
+    <script src="formjava.js"></script>
 </head>
-
 
 <body>
     <header>
@@ -28,7 +23,7 @@
                     <a href="form.html">👤 Formulario de registro</a>
                 </li>
                 <li>
-                    <a href="search.html">🔍 Formulario de busqueda</a>
+                    <a href="search.html">🔍 Formulario de búsqueda</a>
                 </li>
                 <li>
                     <a href="index.html">👥 Log in</a>
@@ -37,44 +32,43 @@
         </nav>
     </header>
 
-    
     <main>
         <h1>Registrarse</h1>
         <section>
             <h2>Formulario de registro</h2>
-            <form action="index.html">
+            <form id="registroForm" action="index.html">
                 <table>
                     <caption>Por favor, introduce a continuación tus datos para registrarte</caption>
                     <tr>
                         <td>
-                            <label for="nombreUsuario">Nombre de usuario: </label>
+                            <label for="nombreUsuario">Nombre de usuario:</label>
                         </td>
                         <td>
-                            <input type="text"id="nombreUsuario">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="contrasena">Contraseña: </label>
-                        </td>
-                        <td>
-                            <input type="password"id="contrasena">
+                            <input type="text" id="nombreUsuario" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="rep_contrasena">Repetir contraseña: </label>
+                            <label for="contrasena">Contraseña:</label>
                         </td>
                         <td>
-                            <input type="password"id="rep_contrasena">
+                            <input type="text" id="contrasena" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <label for="email">Email: </label>
+                            <label for="rep_contrasena">Repetir contraseña:</label>
                         </td>
                         <td>
-                            <input type="text"id="email">
+                            <input type="text" id="rep_contrasena" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Email:</label>
+                        </td>
+                        <td>
+                            <input type="text" id="email" placeholder="nombre@email.loquesea">
                         </td>
                     </tr>
                     <tr>
@@ -82,7 +76,7 @@
                             <label for="genero">Género:</label>
                         </td>
                         <td>
-                            <select id="genero">
+                            <select id="genero" required>
                                 <option value="masculino">Masculino</option>
                                 <option value="femenino">Femenino</option>
                                 <option value="otro">Otro</option>
@@ -94,7 +88,7 @@
                             <label for="fechaNacimiento">Fecha de Nacimiento:</label>
                         </td>
                         <td>
-                            <input type="date" id="fechaNacimiento">
+                            <input type="text" id="fechaNacimiento" placeholder="DD/MM/AAAA">
                         </td>
                     </tr>
                     <tr>
@@ -107,11 +101,11 @@
                     </tr>
                     <tr>
                         <td>
-                            <label for="pais">Pais:</label>
+                            <label for="pais">País:</label>
                         </td>
                         <td>
                             <select id="pais">
-                                <option value="1">Alemania</option> 
+                                <option value="1">Alemania</option>
                                 <option value="2">China</option>
                                 <option value="3">España</option>
                                 <option value="4">Estados Unidos</option>
@@ -124,6 +118,7 @@
                             </select>
                         </td>
                     </tr>
+                    <!--
                     <tr>
                         <td>
                             <label for="imagen">Seleccionar una imagen:</label>
@@ -132,17 +127,19 @@
                             <input type="file" id="imagen" accept="image/*">
                         </td>
                     </tr>
+                    -->
                 </table>
                 <input type="submit" value="Registrar">
             </form>
         </section>
     </main>
-        
-        
+
     <footer>
         <p>PI's - Pictures & Images ©</p>
         <p>Raul Ganga González y Carlos Rocamora Colomer</p>
         <p>2023</p>
     </footer>
-</body>    
+
+    <script src="script.js"></script>
+</body>
 </html>
