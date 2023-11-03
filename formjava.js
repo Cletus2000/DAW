@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("registroForm");
 
     form.addEventListener("submit", function (event) {
+        //alert("Nombre de usuario no válido");
         // Detener el envío del formulario para realizar las validaciones
         event.preventDefault();
 
