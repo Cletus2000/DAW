@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error detalles</title>
+    <title>Detalles de la foto</title>
     <link href="style.css" rel="stylesheet" />
         <link rel="alternate stylesheet" type="text/css" href="dark_style.css" title="Estilo oscuro" />
         <link rel="alternate stylesheet" type="text/css" href="hf_style.css" title="Estilo de high font" />
@@ -16,40 +16,23 @@
 </head>
 
 <body>
-    <header>
-        <a href="index.html" class="title">PI's - Pictures & Images</a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">🏠 Página de inicio</a>
-                </li>
-                <li>
-                    <a href="search.html">🔍Formulario de busqueda</a>
-                </li>
-                <li>
-                    <a href="album_request.html">📋 Imprimir album</a>
-                </li>
-                <li>
-                    <a href="index_unregistered.html">🚪 Log out</a>
-                </li>
-                <li>
-					<a href="profile.html">👤 Menu usuario registrado</a>
-				</li>
-            </ul>
-        </nav>
-    </header>
+<?php include 'nav_bar1.php'; ?>
 
     
     <main>
-        <h1>Error, inicia sesión para ver los detalles de la foto</h1>
+        <h1>Detalles de la imagen</h1>
         <section>
-            <h2>Inicia sesión para ver los detalles de la foto</h2>
-            
-            <a class="boton" href="form.html">Registrarse</a>
-            <a class="boton" href="index.html">Volver al inicio</a>
-        </section>
+            <h2>Nombre de la foto</h2>
+            <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+            <br>
+            <time datetime="2023-09-28">Fecha</time>
+            <address>Pais</address>
+            <strong>Album</strong>
+            <br>
+            <i>Autor</i>
+        </section> 
     </main>
-    
+
     <footer>
         <p>PI's - Pictures & Images ©</p>
         <p>Raul Ganga González y Carlos Rocamora Colomer</p>

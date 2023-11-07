@@ -17,31 +17,7 @@
 
 
 <body>
-    <header>
-        <a href="index.html" class="title">PI's - Pictures & Images</a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">🏠 Página de inicio</a>
-                </li>
-                <li>
-                    <a href="search.html">🔍Formulario de busqueda</a>
-                </li>
-                <li>
-                    <a href="album_request.html">📋 Imprimir album</a>
-                </li>
-                <li>
-                    <a href="index_unregistered.html">🚪 Log out</a>
-                </li>
-                <li>
-					<a href="profile.html">👤 Menu usuario registrado</a>
-				</li>
-            </ul>
-        </nav>
-    </header>
-
-
-    
+    <?php include 'nav_bar1.php'; ?>
     <main>
         <h1>Inicio</h1>
         <section>

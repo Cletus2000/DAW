@@ -1,43 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedido confirmado</title>
-    <link href="style.css" rel="stylesheet" />
-        <link rel="alternate stylesheet" type="text/css" href="dark_style.css" title="Estilo oscuro" />
-        <link rel="alternate stylesheet" type="text/css" href="hf_style.css" title="Estilo de high font" />
-        <link rel="alternate stylesheet" type="text/css" href="hc_style.css" title="Estilo de high contrast" />
-        <link rel="alternate stylesheet" type="text/css" href="hcf_style.css" title="Estilo de high font & contrast" />
-        <link rel="stylesheet" type="text/css" href="imp_style.css" media="print" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-    </style>
+<?php include 'head.php'; ?>
+<title>Pedido solicitud</title>
 </head>
 
 <body>
-    <header>
-        <a href="index.html" class="title">PI's - Pictures & Images</a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">🏠 Página de inicio</a>
-                </li>
-                <li>
-                    <a href="search.html">🔍Formulario de busqueda</a>
-                </li>
-                <li>
-                    <a href="album_request.html">📋 Imprimir album</a>
-                </li>
-                <li>
-                    <a href="index_unregistered.html">🚪 Log out</a>
-                </li>
-                <li>
-					<a href="profile.html">👤 Menu usuario registrado</a>
-				</li>
-            </ul>
-        </nav>
-    </header>
+<?php include 'nav_bar1.php'; ?>
 
     <main>
         <h1>Solicitud de album</h1>
@@ -78,7 +44,7 @@
         <section>
             <h2>Formulario de petición</h2>
 
-            /*Quitar la tabla y meterlo en flex y luego span para poder poner el campo encima y rellenar debajo*/
+            <!--Quitar la tabla y meterlo en flex y luego span para poder poner el campo encima y rellenar debajo -->
             <form action="album_confirmed.html"> <!--Acuerdate que aqui va el nombre de el archivo respuesta -->
                 <table>
                     <caption>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu album:</caption>
@@ -210,10 +176,4 @@
             <a class="boton" href="index.html">Cancelar y volver al inicio</a>
         </section>
 
-        <footer>
-            <p>PI's - Pictures & Images ©</p>
-            <p>Raul Ganga González y Carlos Rocamora Colomer</p>
-            <p>2023</p>
-        </footer>
-
-</main>
+<?php include 'footer.php'; ?>

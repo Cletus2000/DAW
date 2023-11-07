@@ -12,25 +12,7 @@
 </head>
 
 <body>
-    <header>
-        <a href="index.html" class="title">PI's - Pictures & Images</a>
-        <nav>
-            <ul>
-                <li>
-                    <a href="index_unregistered.html">🏠 Página de inicio</a>
-                </li>
-                <li>
-                    <a href="form.html">👤 Formulario de registro</a>
-                </li>
-                <li>
-                    <a href="search.html">🔍 Formulario de búsqueda</a>
-                </li>
-                <li>
-                    <a href="index.html">👥 Log in</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+<?php include 'nav_bar1.php'; ?>
 
     <main>
         <h1>Registrarse</h1>
