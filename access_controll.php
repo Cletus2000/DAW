@@ -24,7 +24,7 @@ $contrasena = $_POST["contrasena"];
 
 if (esUsuarioRegistrado($nombre, $contrasena)) {
     // Redirigir al menú de usuario registrado
-    header("Location: index.html");
+    header("Location: index.php");
 } else {
     // Redirigir a la página principal con un mensaje de error
     header("Location: index.php?error=Usuario no registrado");

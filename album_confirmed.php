@@ -3,7 +3,6 @@
 </head>
 
 <body>
-    <script src="calcularPrecio.js"></script>
     <?php include 'nav_bar1.php'; ?>
 
     
@@ -19,7 +18,7 @@
                             <label for="tituloAlb">Título album: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="text" name="tituloAlb" id="tituloAlb" disabled value="Nombre">
+                            <input type="text" name="tituloAlb" id="tituloAlb" value=<?php echo $_POST['tituloAlb']; ?>>
                         </td>
                     </tr>
                     <tr>
@@ -27,7 +26,7 @@
                             <label for="descr">Texto adicional: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="text" name="descr" id="dedscr" disabled value="Descripcion">
+                        <input type="textarea" name="descr" id="descr" value="<?php echo isset($_POST['descr']) ? htmlspecialchars($_POST['descr']) : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -35,7 +34,7 @@
                             <label for="col">Color portada: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="color" name="col" id="col" disabled>
+                            <input type="color" name="col" id="col" value=<?php echo $_POST['col']; ?>>
                         </td>
                     </tr>
                     <tr>
@@ -43,21 +42,18 @@
                             <label for="numcopies">Numero de copias: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="number" name="numcopies" id="numcopies" min="0" disabled value="99">
+                            <input type="number" name="numcopies" id="numcopies" min="0" value=<?php echo $_POST['numcopies']; ?>>
                         </td>
                     </tr>
                     <tr>
                         <td class="nombreCampo">
-                            <strong>Precio total del pedido: </strong>
-                        </td>
-                        <td class="campoRellenable">
-                            <p id="precioFinal" >23.495.607.139.482,75 bolívares </p>
+                            <strong>    <?php include 'calculoTabla.php'; ?> </strong>
                         </td>
                     </tr>
                 </table>
             </form>
-            <a class="boton" href="index.html">Volver a la página principal</a>
-            <a class="boton" href="album_request.html">Hacer otro pedido</a>
+            <a class="boton" href="index.php">Volver a la página principal</a>
+            <a class="boton" href="album_request.php">Hacer otro pedido</a>
                             
         </section>
     </main>

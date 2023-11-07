@@ -12,7 +12,7 @@
                     <a href="album_request.php">📋 Imprimir album</a>
                 </li>
                 <li>
-                    <a href="index_unregistered.html">🚪 Log out</a>
+                    <a href="index_unregistered.php">🚪 Log out</a>
                 </li>
                 <li>
 					<a href="profile.php">👤 Menu usuario registrado</a>

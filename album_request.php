@@ -40,12 +40,13 @@
                         <td> 0.02 bolivares por foto</td>
                     </tr>
                 </table>
+
         </section>
         <section>
             <h2>Formulario de petición</h2>
 
             <!--Quitar la tabla y meterlo en flex y luego span para poder poner el campo encima y rellenar debajo -->
-            <form action="album_confirmed.html"> <!--Acuerdate que aqui va el nombre de el archivo respuesta -->
+            <form action="album_confirmed.php" method="post"> <!--Acuerdate que aqui va el nombre de el archivo respuesta -->
                 <table>
                     <caption>Rellena el siguiente formulario aportando todos los detalles para confeccionar tu album:</caption>
                     <tr>
@@ -53,7 +54,7 @@
                             <label for="nombreDest"> (*) Nombre destinatario: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="text" name="nombreDest" id="nombreDest" required maxlength="200"> <!--Nombre del destinatario-->
+                            <input type="text" id="nombreDest" name="nombreDest" required maxlength="200" value="<?php echo isset($_POST['nombreDest']) ? $_POST['nombreDest'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -61,7 +62,7 @@
                             <label for="tituloAlb">(*) Título album: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="text" name="tituloAlb" id="tituloAlb" required maxlength="200"> <!--Título del album-->
+                            <input type="text" id="tituloAlb" name="tituloAlb" required maxlength="200" value="<?php echo isset($_POST['tituloAlb']) ? $_POST['tituloAlb'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -69,7 +70,7 @@
                             <label for="descr">Texto adicional: </label>
                         </td>
                         <td class="campoRellenable">
-                            <textarea name="descr" id="dedscr" maxlength="4000"></textarea> <!--Descripcion-->
+                            <input type="textarea" id="descr" name="descr" maxlength="4000" value="<?php echo isset($_POST['descr']) ? htmlspecialchars($_POST['descr']) : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -77,7 +78,7 @@
                             <label for="email">(*) Correo electrónico: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="text" name="email" id="email" required maxlength="200"> <!--Email-->
+                            <input type="text" id="email" name="email" required maxlength="200 value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -85,11 +86,11 @@
                             <label for="street">(*) Dirección: </label> 
                         </td>
                         <td class="campoRellenable">
-                            <input type="text" name="street" id="street" placeholder="Calle">
+                            <input type="text" id="street" name="street" placeholder="Calle" value="<?php echo isset($_POST['street']) ? $_POST['street'] : '' ?>">
                             <br>
-                            <input type="number" name="num" id="num" placeholder="Numero">
+                            <input type="number" id="num" name="num" placeholder="Numero" min=0 value="<?php echo isset($_POST['num']) ? $_POST['num'] : '' ?>">
                             <br>
-                            <input type="text" name="cp" id="cp" placeholder="CP">
+                            <input type="text" id="cp" name="cp" placeholder="CP" value="<?php echo isset($_POST['cp']) ? $_POST['cp'] : '' ?>">
                             <br>
                             <select id="loc" placeholder="Localidad">
                                 <option value="1">Alicante</option>
@@ -97,7 +98,7 @@
                             </select>
                             <br>
                             <select id="prov" placeholder="Provincia">
-                                <option value="1">Alicante</option>
+                                <option value="1">Barcelona</option>
                                 <option value="2">Bogota</option>
                             </select>
                             <!--Dirección     mirar field set para agrupar la direccion-->
@@ -108,7 +109,7 @@
                             <label for="tele">Telefono: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="tel" name="tele" id="tele"> <!--Telefono-->
+                            <input type="tel" id="tele" name="tele" value="<?php echo isset($_POST['tele']) ? $_POST['tele'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -116,7 +117,7 @@
                             <label for="col">Color portada: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="color" name="col" id="col"> <!--Color portada-->
+                            <input type="color" id="col" name="col" value="<?php echo isset($_POST['col']) ? $_POST['col'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -124,7 +125,7 @@
                             <label for="numcopies">Numero de copias: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="number" name="numcopies" id="numcopies" value="1" min="1" max="99"> <!--Numero de copias-->
+                            <input type="number" id="numcopies" name="numcopies" value="1" min="1" max="99" value="<?php echo isset($_POST['numcopies']) ? $_POST['numcopies'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -132,7 +133,7 @@
                             <label for="impres">(*) Resolución de impresión: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="number" name="impres" id="impres" min="150" max="900" step="150" value="150"> <!--Resolución de impresión-->
+                            <input type="number" id="impres" name="impres" min="150" max="900" step="150" value="150 value="<?php echo isset($_POST['impres']) ? $_POST['impres'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -154,7 +155,7 @@
                             <label for="recdate">Fecha de recepcion: </label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="date" name="recdate" id="recdate"> <!--Fecha de recepcion-->
+                            <input type="date" id="recdate" name="recdate" value="<?php echo isset($_POST['recdate']) ? $_POST['recdate'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -162,7 +163,7 @@
                             <label for="color">Impresion a color</label>
                         </td>
                         <td class="campoRellenable">
-                            <input type="checkbox" name="color" id="color">
+                            <input type="checkbox" id="color" name="color" value="<?php echo isset($_POST['color']) ? $_POST['color'] : '' ?>">
                         </td>
                     </tr>
                 </table>
@@ -173,7 +174,7 @@
             </form>
         </section>
         <section>
-            <a class="boton" href="index.html">Cancelar y volver al inicio</a>
+            <a class="boton" href="index.php">Cancelar y volver al inicio</a>
         </section>
 
 <?php include 'footer.php'; ?>

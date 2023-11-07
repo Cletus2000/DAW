@@ -15,7 +15,7 @@
             <p>País: <?php echo $_POST['paisPubli']; ?></p>
             <div class="grid-container">
                 <article>
-                    <a href="details.html">
+                    <a href="details.php">
                         <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
                     </a>
                     <br>
@@ -25,7 +25,7 @@
                     <address>Pais</address>
                 </article>
                 <article>
-                    <a href="error.html">
+                    <a href="error.php">
                         <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
                     </a>
                     <br>

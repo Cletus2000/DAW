@@ -1,14 +1,38 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario registro</title>
-    <link href="style.css" rel="stylesheet" />
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-    </style>
-    <script src="formjava.js"></script>
+<?php
+// Iniciar la sesión
+session_start();
+
+// Comprobar si el formulario ha sido enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nombreUsuario = $_POST["nombreUsuario"];
+    $contrasena = $_POST["contrasena"];
+    $rep_contrasena = $_POST["rep_contrasena"];
+    $email = $_POST["email"];
+
+    // Comprobar que se ha escrito algo en el nombre de usuario, en la contraseña y en repetir contraseña
+    if (empty($nombreUsuario) || empty($contrasena) || empty($rep_contrasena) || empty($email)) {
+        $_SESSION["error"] = "Por favor, completa todos los campos.";
+        header("Location: error.php");
+    }
+    // Comprobar que contraseña y repetir contraseña coinciden
+    else if ($contrasena != $rep_contrasena) {
+        $_SESSION["error"] = "Las contraseñas no coinciden.";
+        header("Location: error.php");
+    }
+    else {
+        // Guardar la información del formulario en una variable de sesión
+        $_SESSION["nombreUsuario"] = $nombreUsuario;
+        $_SESSION["contrasena"] = $contrasena;
+        $_SESSION["genero"] = $_POST["genero"];
+        $_SESSION["email"] = $email;
+
+        // Redirigir a la página de bienvenida
+        header("Location: index.php");
+    }
+}
+?>
+<?php include 'head.php'; ?>
+<title>Formulario de registro</title>
 </head>
 
 <body>
@@ -18,7 +42,7 @@
         <h1>Registrarse</h1>
         <section>
             <h2>Formulario de registro</h2>
-            <form id="registroForm" action="index.html">
+            <form id="registroForm" action="new_user.php" method="post">
                 <table>
                     <caption>Por favor, introduce a continuación tus datos para registrarte</caption>
                     <tr>
@@ -26,7 +50,7 @@
                             <label for="nombreUsuario">Nombre de usuario:</label>
                         </td>
                         <td>
-                            <input type="text" id="nombreUsuario">
+                            <input type="text" id="nombreUsuario" name="nombreUsuario" value="<?php echo isset($_POST['nombreUsuario']) ? $_POST['nombreUsuario'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -34,7 +58,7 @@
                             <label for="contrasena">Contraseña:</label>
                         </td>
                         <td>
-                            <input type="text" id="contrasena">
+                            <input type="pass" id="contrasena" name="contrasena" value="<?php echo isset($_POST['contrasena']) ? $_POST['contrasena'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -42,7 +66,7 @@
                             <label for="rep_contrasena">Repetir contraseña:</label>
                         </td>
                         <td>
-                            <input type="text" id="rep_contrasena">
+                            <input type="pass" id="rep_contrasena" name="rep_contrasena" value="<?php echo isset($_POST['rep_contrasena']) ? $_POST['rep_contrasena'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -50,7 +74,7 @@
                             <label for="email">Email:</label>
                         </td>
                         <td>
-                            <input type="text" id="email" placeholder="nombre@email.loquesea">
+                            <input type="text" id="email" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -59,9 +83,10 @@
                         </td>
                         <td>
                             <select id="genero">
-                                <option value="masculino">Masculino</option>
-                                <option value="femenino">Femenino</option>
-                                <option value="otro">Otro</option>
+                                <option value="Masculino" <?php echo isset($_POST['genero']) && $_POST['genero'] == 'Masculino' ? 'selected' : '' ?>>Masculino</option>
+                                <option value="Femenino" <?php echo isset($_POST['genero']) && $_POST['genero'] == 'Femenino' ? 'selected' : '' ?>>Femenino</option>
+                                <option value="Otro" <?php echo isset($_POST['genero']) && $_POST['genero'] == 'Otro' ? 'selected' : '' ?>>Otro</option>
+                                <option value="Prefiero no decirlo" <?php echo isset($_POST['genero']) && $_POST['genero'] == 'Prefiero no decirlo' ? 'selected' : '' ?>>Prefiero no decirlo</option>
                             </select>
                         </td>
                     </tr>
@@ -70,15 +95,16 @@
                             <label for="fechaNacimiento">Fecha de Nacimiento:</label>
                         </td>
                         <td>
-                            <input type="text" id="fechaNacimiento" placeholder="DD/MM/AAAA">
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="DD/MM/AAAA" value="<?php echo isset($_POST['fechaNacimiento']) ? $_POST['fechaNacimiento'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
                         <td>
                             <label for="ciudad">Ciudad de residencia:</label>
+
                         </td>
                         <td>
-                            <input type="text" id="ciudad">
+                            <input type="text" id="ciudad" name="ciudad" value="<?php echo isset($_POST['ciudad']) ? $_POST['ciudad'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -87,16 +113,16 @@
                         </td>
                         <td>
                             <select id="pais">
-                                <option value="1">Alemania</option>
-                                <option value="2">China</option>
-                                <option value="3">España</option>
-                                <option value="4">Estados Unidos</option>
-                                <option value="5">Francia</option>
-                                <option value="6">Grecia</option>
-                                <option value="7">Italia</option>
-                                <option value="8">México</option>
-                                <option value="9">Rusia</option>
-                                <option value="10">Ucrania</option>
+                            <option value="1" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Alemania' ? 'selected' : '' ?>>Alemania</option>
+                                <option value="2" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'China' ? 'selected' : '' ?>>China</option>
+                                <option value="3" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'España' ? 'selected' : '' ?>>España</option>
+                                <option value="4" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
+                                <option value="5" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Francia' ? 'selected' : '' ?>>Francia</option>
+                                <option value="6" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Grecia' ? 'selected' : '' ?>>Grecia</option>
+                                <option value="7" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Italia' ? 'selected' : '' ?>>Italia</option>
+                                <option value="8" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'México' ? 'selected' : '' ?>>México</option>
+                                <option value="9" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Rusia' ? 'selected' : '' ?>>Rusia</option>
+                                <option value="10" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Ucrania' ? 'selected' : '' ?>>Ucrania</option>
                             </select>
                         </td>
                     </tr>
@@ -116,12 +142,4 @@
         </section>
     </main>
 
-    <footer>
-        <p>PI's - Pictures & Images ©</p>
-        <p>Raul Ganga González y Carlos Rocamora Colomer</p>
-        <p>2023</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+<?php include 'footer.php'; ?>
