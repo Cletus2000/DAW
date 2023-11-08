@@ -16,20 +16,20 @@
             <div class="grid-container">
                 <article>
                     <a href="details.php">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                        <img src="pictures/donpollo.jpg" alt="Foto" width="100" height="100">
                     </a>
                     <br>
-                    <label>Nombre de la foto que lleva a la pagina de detalles de foto</label>
+                    <label>Don Pollo</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
                     <address>Pais</address>
                 </article>
                 <article>
-                    <a href="error.php">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                    <a href="details2.php">
+                        <img src="pictures/pablomotos.jpg" alt="Foto" width="100" height="100">
                     </a>
                     <br>
-                    <label>Nombre de la foto que lleva a la pagina de error</label>
+                    <label>Pablo Motos</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
                     <address>Pais</address>

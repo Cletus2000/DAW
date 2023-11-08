@@ -7,10 +7,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombreUsuario = $_POST["nombreUsuario"];
     $contrasena = $_POST["contrasena"];
     $rep_contrasena = $_POST["rep_contrasena"];
-    $email = $_POST["email"];
 
     // Comprobar que se ha escrito algo en el nombre de usuario, en la contraseña y en repetir contraseña
-    if (empty($nombreUsuario) || empty($contrasena) || empty($rep_contrasena) || empty($email)) {
+    if (empty($nombreUsuario) || empty($contrasena) || empty($rep_contrasena)) {
         $_SESSION["error"] = "Por favor, completa todos los campos.";
         header("Location: error.php");
     }
@@ -24,7 +23,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["nombreUsuario"] = $nombreUsuario;
         $_SESSION["contrasena"] = $contrasena;
         $_SESSION["genero"] = $_POST["genero"];
-        $_SESSION["email"] = $email;
 
         // Redirigir a la página de bienvenida
         header("Location: index.php");

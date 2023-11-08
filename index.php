@@ -12,53 +12,53 @@
             <div class="grid-container">
                 <article>
                     <a href="details.php">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
                     </a>
                     <br>
-                    <label>Nombre foto</label>
+                    <label>Don Pollo</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
+                    <address>Pais: Perú</address>
+                </article>
+                <article>
+                    <a href="details2.php">
+                        <img src="pictures/pablomotos.jpg" alt="Foto" width="300" height="300">
+                    </a>
+                    <br>
+                    <label>Pablo Motos</label>
+                    <br>
+                    <time datetime="2023-09-28">Fecha</time>
+                    <address>Pais: El hormigueo</address>
                 </article>
                 <article>
                     <a href="details.php">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
                     </a>
                     <br>
-                    <label>Nombre de foto muy largo para probar si se comprime con dos puntos o el tamaño es el adecuado y no altera la disposicion</label>
+                    <label>Don Pollo</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
+                    <address>Pais: Perú</address>
+                </article>
+                <article>
+                    <a href="details2.php">
+                        <img src="pictures/pablomotos.jpg" alt="Foto" width="300" height="300">
+                    </a>
+                    <br>
+                    <label>Pablo Motos</label>
+                    <br>
+                    <time datetime="2023-09-28">Fecha</time>
+                    <address>Pais: El hormigueo</address>
                 </article>
                 <article>
                     <a href="details.php">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
                     </a>
                     <br>
-                    <label>Nombre foto</label>
+                    <label>Don Pollo</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
-                </article>
-                <article>
-                    <a href="details.php">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
-                    </a>
-                    <br>
-                    <label>Nombre foto</label>
-                    <br>
-                    <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
-                </article>
-                <article>
-                    <a href="details.php">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
-                    </a>
-                    <br>
-                    <label>Nombre foto</label>
-                    <br>
-                    <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
+                    <address>Pais: Perú</address>
                 </article>
             </div>
         </section>

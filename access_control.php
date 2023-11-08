@@ -2,13 +2,13 @@
 // Datos de los usuarios permitidos
 $usuarios_permitidos = array(
     array("nombre" => "admin", "contrasena" => "admin"),
-    array("nombre" => "usuario1", "contrasena" => "contrasena1"),
-    array("nombre" => "usuario2", "contrasena" => "contrasena2"),
-    array("nombre" => "usuario3", "contrasena" => "contrasena3")
+    array("nombre" => "raul", "contrasena" => "raul"),
+    array("nombre" => "carlos", "contrasena" => "carlos"),
+    array("nombre" => "pepe", "contrasena" => "pepe")
 );
 
 // Comprobar si el usuario está registrado
-function esUsuarioRegistrado($nombre, $contraseña) {
+function esUsuarioRegistrado($nombre, $contrasena) {
     global $usuarios_permitidos;
     foreach ($usuarios_permitidos as $usuario) {
         if ($usuario["nombre"] == $nombre && $usuario["contrasena"] == $contrasena) {
@@ -27,6 +27,6 @@ if (esUsuarioRegistrado($nombre, $contrasena)) {
     header("Location: index.php");
 } else {
     // Redirigir a la página principal con un mensaje de error
-    header("Location: index.php?error=Usuario no registrado");
+    header("Location: index_unregistered.php?error=Usuario no registrado");
 }
 ?>

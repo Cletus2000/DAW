@@ -1,7 +1,9 @@
 <?php include 'head.php'; ?>
 <title>Index no registrado</title>
 </head>
-
+<?php
+$error = isset($_GET['error']) ? $_GET['error'] : '';
+?>
 
 <body>
     <header>
@@ -9,7 +11,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="index_unregistered.html">🏠 Página de inicio</a>
+                    <a href="index_unregistered.php">🏠 Página de inicio</a>
                 </li>
                 <li>
                     <a href="form.php">👤 Formulario de registro</a>
@@ -24,77 +26,78 @@
         </nav>
     </header>
 
-
-    
-    
     <main>
-        
         <h1>Inicio</h1>
         <section>
             <h2>Formulario de inicio de sesion</h2>
-            <form action="index.html" id="iniciarSesion">
-                <label for="user">Nombre de usuario:</label>
-                <input type="text" id="user">
+            <form action="access_control.php" method="post" id="iniciarSesion">
+                <label for="nombre">Nombre de usuario:</label>
+                <input type="text" id="nombre" name="nombre">
                 <br>
-                <label for="text">Contraseña:</label>
-                <input type="text" id="psw">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" name="contrasena">
                 <br>
                 <input type="submit" value="Enviar">
             </form>
+            <?php if ($error): ?>
+                <div class="error">
+                    <?php echo htmlspecialchars($error); ?>
+                </div>
+            <?php endif; ?>
         </section>
         
         <section>
-            <h2>Resumen de las ultimas 5 fotos</h2>
+            <h2>Resumen de las últimas 5 fotos</h2>
             <div class="grid-container">
                 <article>
-                    <a href="error.html">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                    <a href="details.php">
+                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
                     </a>
                     <br>
-                    <label>Nombre foto</label>
+                    <label>Don Pollo</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
+                    <address>Pais: Perú</address>
                 </article>
                 <article>
-                    <a href="error.html">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                    <a href="details2.php">
+                        <img src="pictures/pablomotos.jpg" alt="Foto" width="300" height="300">
                     </a>
                     <br>
-                    <label>Nombre foto</label>
+                    <label>Pablo Motos</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
+                    <address>Pais: El hormigueo</address>
                 </article>
                 <article>
-                    <a href="error.html">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                    <a href="details.php">
+                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
                     </a>
                     <br>
-                    <label>Nombre foto</label>
+                    <label>Don Pollo</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
+                    <address>Pais: Perú</address>
                 </article>
                 <article>
-                    <a href="error.html">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                    <a href="details2.php">
+                        <img src="pictures/pablomotos.jpg" alt="Foto" width="300" height="300">
                     </a>
                     <br>
-                    <label>Nombre foto</label>
+                    <label>Pablo Motos</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
+                    <address>Pais: El hormigueo</address>
                 </article>
                 <article>
-                    <a href="error.html">
-                        <img src="nullPhoto.webp" alt="Foto" width="100" height="100">
+                    <a href="details.php">
+                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
                     </a>
                     <br>
-                    <label>Nombre foto</label>
+                    <label>Don Pollo</label>
                     <br>
                     <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais</address>
+                    <address>Pais: Perú</address>
                 </article>
             </div>
         </section>
