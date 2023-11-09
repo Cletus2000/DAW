@@ -29,6 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
 <?php include 'head.php'; ?>
 <title>Formulario de registro</title>
 </head>
@@ -48,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="nombreUsuario">Nombre de usuario:</label>
                         </td>
                         <td>
-                            <input type="text" id="nombreUsuario" name="nombreUsuario" value="<?php echo isset($_POST['nombreUsuario']) ? $_POST['nombreUsuario'] : '' ?>">
+                            <input required type="text" id="nombreUsuario" name="nombreUsuario" value="<?php echo isset($_POST['nombreUsuario']) ? $_POST['nombreUsuario'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -56,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="contrasena">Contraseña:</label>
                         </td>
                         <td>
-                            <input type="pass" id="contrasena" name="contrasena" value="<?php echo isset($_POST['contrasena']) ? $_POST['contrasena'] : '' ?>">
+                            <input required type="pass" id="contrasena" name="contrasena" value="<?php echo isset($_POST['contrasena']) ? $_POST['contrasena'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -64,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="rep_contrasena">Repetir contraseña:</label>
                         </td>
                         <td>
-                            <input type="pass" id="rep_contrasena" name="rep_contrasena" value="<?php echo isset($_POST['rep_contrasena']) ? $_POST['rep_contrasena'] : '' ?>">
+                            <input required type="pass" id="rep_contrasena" name="rep_contrasena" value="<?php echo isset($_POST['rep_contrasena']) ? $_POST['rep_contrasena'] : '' ?>">
                         </td>
                     </tr>
                     <tr>

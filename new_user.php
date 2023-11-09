@@ -9,7 +9,7 @@
         <h1>Datos de registro</h1>
         <section>
                 <table>
-                    <caption>Confirma que estos datos, son los tuyos.</caption>
+                    <caption>Confirma que estos datos son los tuyos.</caption>
                     <tr>
                         <td>
                             <label for="nombreUsuario">Nombre de usuario:</label>

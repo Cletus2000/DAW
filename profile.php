@@ -13,8 +13,8 @@
             <a class="boton" href="#">Darte de baja</a>
             <a class="boton" href="#">Tus álbumes</a>
             <a class="boton" href="create_album.php">Crear álbum nuevo</a>
-            <a class="boton" href="album_request.html">Solicitar álbum impreso</a>
-            <a class="boton" href="index.html">Salir</a>
+            <a class="boton" href="album_request.php">Solicitar álbum impreso</a>
+            <a class="boton" href="index.php">Salir</a>
         </section>
     </main>
     

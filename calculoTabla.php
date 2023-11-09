@@ -27,5 +27,5 @@ if ($impres > 300)
     $precio += $nFotos * 0.02;
 
 // Mostrar el precio final en la consola
-echo "Precio Final: " . number_format($precio, 2) . "€";
+echo number_format($precio, 2) . "€";
 ?>
