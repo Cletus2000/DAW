@@ -3,9 +3,9 @@
 <!?php
 // Comprobar si el formulario ha sido enviado
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    $nombreUsuario = $_GET["nombreUsuario"];
-    $contrasena = $_GET["contrasena"];
-    $rep_contrasena = $_GET["rep_contrasena"];
+    $nombreUsuario = $_POST["nombreUsuario"];
+    $contrasena = $_POST["contrasena"];
+    $rep_contrasena = $_POST["rep_contrasena"];
 
     // Comprobar que se ha escrito algo en el nombre de usuario, en la contraseña y en repetir contraseña
     if (empty($nombreUsuario)) {
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
     else {
         // Redirigir a la página de bienvenida con la información del formulario en la URL
-        header("Location: new_user.php?nombreUsuario=" . urlencode($nombreUsuario) . "&genero=" . urlencode($_GET["genero"]));
+        header("Location: new_user.php?nombreUsuario=" . urlencode($nombreUsuario) . "&genero=" . urlencode($_POST["genero"]));
     }
 }
 ?>
@@ -42,15 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["error"] = "Las contraseñas no coinciden.";
         header("Location: error_same.php");
     }
-    else {
-        // Guardar la información del formulario en una variable de sesión
-        $_SESSION["nombreUsuario"] = $nombreUsuario;
-        $_SESSION["contrasena"] = $contrasena;
-        $_SESSION["genero"] = $_POST["genero"];
-
-        // Redirigir a la página de bienvenida
-        header("Location: new_user.php");
-    }
 }
 ?>
 
@@ -70,7 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="nombreUsuario">Nombre de usuario:</label>
                         </td>
                         <td>
-                            <input type="text" name="nombreUsuario" id="nombreUsuario" value="<?php echo isset($_GET['nombreUsuario']) ? htmlspecialchars($_GET['nombreUsuario']) : '' ?>">
+                            <input type="text" name="nombreUsuario" id="nombreUsuario" value="<?php echo isset($_POST['nombreUsuario']) ? htmlspecialchars($_POST['nombreUsuario']) : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -78,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="email">Email:</label>
                         </td>
                         <td>
-                            <input type="text" id="email" name="email" value="<?php echo isset($_GET['email']) ? $_GET['email'] : '' ?>">
+                            <input type="text" id="email" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -86,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="genero">Género:</label>
                         </td>                            
                         <td>
-                            <input type="text" id="genero" name="genero" value="<?php echo isset($_GET['genero']) ? $_GET['genero'] : '' ?>">
+                            <input type="text" id="genero" name="genero" value="<?php echo isset($_POST['genero']) ? $_POST['genero'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -94,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="fechaNacimiento">Fecha de Nacimiento:</label>
                         </td>
                         <td>
-                            <input type="text" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo isset($_GET['fechaNacimiento']) ? $_GET['fechaNacimiento'] : '' ?>">
+                            <input type="text" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo isset($_POST['fechaNacimiento']) ? $_POST['fechaNacimiento'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -102,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="ciudad">Ciudad de residencia:</label>
                         </td>
                         <td>
-                        <input type="text" id="ciudad" name="ciudad" value="<?php echo isset($_GET['ciudad']) ? $_GET['ciudad'] : '' ?>">
+                        <input type="text" id="ciudad" name="ciudad" value="<?php echo isset($_POST['ciudad']) ? $_POST['ciudad'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -110,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="pais">País:</label>
                         </td>
                         <td>
-                            <input type="text" id="pais" name="pais" value="<?php echo isset($_GET['pais']) ? $_GET['pais'] : '' ?>">
+                            <input type="text" id="pais" name="pais" value="<?php echo isset($_POST['pais']) ? $_POST['pais'] : '' ?>">
                         </td>
                     </tr>
                     <!--

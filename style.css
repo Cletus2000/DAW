@@ -167,7 +167,6 @@ h1 {
 	th {
 		background-color: var(--color8);
 		color: white;
-		padding: 5px 10px;
 	}
 
 	/* Las demás celdas de la tabla */
