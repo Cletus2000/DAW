@@ -47,9 +47,6 @@
                     </tr>
                     <tr>
                         <td class="nombreCampo">
-                            <strong>    Precio Final: </strong>
-                        </td>
-                        <td class="campoRellenable">
                             <strong>    <?php include 'calculoTabla.php'; ?> </strong>
                         </td>
                     </tr>

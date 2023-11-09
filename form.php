@@ -1,34 +1,3 @@
-<?php
-// Iniciar la sesión
-session_start();
-
-// Comprobar si el formulario ha sido enviado
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombreUsuario = $_POST["nombreUsuario"];
-    $contrasena = $_POST["contrasena"];
-    $rep_contrasena = $_POST["rep_contrasena"];
-
-    // Comprobar que se ha escrito algo en el nombre de usuario, en la contraseña y en repetir contraseña
-    if (empty($nombreUsuario) || empty($contrasena) || empty($rep_contrasena)) {
-        $_SESSION["error"] = "Por favor, completa todos los campos.";
-        header("Location: error.php");
-    }
-    // Comprobar que contraseña y repetir contraseña coinciden
-    else if ($contrasena != $rep_contrasena) {
-        $_SESSION["error"] = "Las contraseñas no coinciden.";
-        header("Location: error.php");
-    }
-    else {
-        // Guardar la información del formulario en una variable de sesión
-        $_SESSION["nombreUsuario"] = $nombreUsuario;
-        $_SESSION["contrasena"] = $contrasena;
-        $_SESSION["genero"] = $_POST["genero"];
-
-        // Redirigir a la página de bienvenida
-        header("Location: index.php");
-    }
-}
-?>
 
 <?php include 'head.php'; ?>
 <title>Formulario de registro</title>
@@ -36,12 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 <?php include 'nav_bar1.php'; ?>
-
     <main>
         <h1>Registrarse</h1>
         <section>
             <h2>Formulario de registro</h2>
-            <form id="registroForm" action="new_user.php" method="post">
+            <form id="registroForm" action="new_user.php" method="POST">
                 <table>
                     <caption>Por favor, introduce a continuación tus datos para registrarte</caption>
                     <tr>
@@ -49,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="nombreUsuario">Nombre de usuario:</label>
                         </td>
                         <td>
-                            <input required type="text" id="nombreUsuario" name="nombreUsuario" value="<?php echo isset($_POST['nombreUsuario']) ? $_POST['nombreUsuario'] : '' ?>">
+                            <input type="text" id="nombreUsuario" name="nombreUsuario" value="<?php echo isset($_POST['nombreUsuario']) ? $_POST['nombreUsuario'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -57,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="contrasena">Contraseña:</label>
                         </td>
                         <td>
-                            <input required type="pass" id="contrasena" name="contrasena" value="<?php echo isset($_POST['contrasena']) ? $_POST['contrasena'] : '' ?>">
+                            <input type="pass" id="contrasena" name="contrasena" value="<?php echo isset($_POST['contrasena']) ? $_POST['contrasena'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
@@ -65,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <label for="rep_contrasena">Repetir contraseña:</label>
                         </td>
                         <td>
-                            <input required type="pass" id="rep_contrasena" name="rep_contrasena" value="<?php echo isset($_POST['rep_contrasena']) ? $_POST['rep_contrasena'] : '' ?>">
+                            <input type="pass" id="rep_contrasena" name="rep_contrasena" value="<?php echo isset($_POST['rep_contrasena']) ? $_POST['rep_contrasena'] : '' ?>">
                         </td>
                     </tr>
                     <tr>
