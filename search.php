@@ -32,16 +32,16 @@
                         </td>
                         <td>
                             <select id="paisPubli" name="paisPubli">
-                                <option value="1" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Alemania' ? 'selected' : '' ?>>Alemania</option>
-                                <option value="2" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'China' ? 'selected' : '' ?>>China</option>
-                                <option value="3" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'España' ? 'selected' : '' ?>>España</option>
-                                <option value="4" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
-                                <option value="5" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Francia' ? 'selected' : '' ?>>Francia</option>
-                                <option value="6" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Grecia' ? 'selected' : '' ?>>Grecia</option>
-                                <option value="7" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Italia' ? 'selected' : '' ?>>Italia</option>
-                                <option value="8" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'México' ? 'selected' : '' ?>>México</option>
-                                <option value="9" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Rusia' ? 'selected' : '' ?>>Rusia</option>
-                                <option value="10" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Ucrania' ? 'selected' : '' ?>>Ucrania</option>
+                                <option value="Alemania" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Alemania' ? 'selected' : '' ?>>Alemania</option>
+                                <option value="China" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'China' ? 'selected' : '' ?>>China</option>
+                                <option value="España" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'España' ? 'selected' : '' ?>>España</option>
+                                <option value="Estados Unidos" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
+                                <option value="Francia" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Francia' ? 'selected' : '' ?>>Francia</option>
+                                <option value="Grecia" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Grecia' ? 'selected' : '' ?>>Grecia</option>
+                                <option value="Italia" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Italia' ? 'selected' : '' ?>>Italia</option>
+                                <option value="México" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'México' ? 'selected' : '' ?>>México</option>
+                                <option value="Rusia" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Rusia' ? 'selected' : '' ?>>Rusia</option>
+                                <option value="Ucrania" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Ucrania' ? 'selected' : '' ?>>Ucrania</option>
                             </select>            
                         </td>
                     </tr>
