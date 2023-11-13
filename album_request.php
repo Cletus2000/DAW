@@ -29,6 +29,7 @@ function precio($fotos, $dpi, $color)
 }
 ?>
 
+
 <body>
 <?php include 'nav_bar1.php'; ?>
 
@@ -37,7 +38,7 @@ function precio($fotos, $dpi, $color)
         <section>
             <h2>Tabla de precios</h2>
             <table class="precios">
-                <tr>
+            <tr>
                     <!--    quitar scopes   -->
                     <th> Concepto</th>
                     <th>Tarifa</th>
@@ -199,8 +200,8 @@ function precio($fotos, $dpi, $color)
                     <td><?php precio(45, 200, true); ?></td>
                     <td><?php precio(45, 700, true); ?></td>
                 </tr>
-
             </table>
+
         </section>
         <section>
             <h2>Formulario de petición</h2>
