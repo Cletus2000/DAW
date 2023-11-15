@@ -9,7 +9,7 @@
         <h1>Crear album</h1>
         <section>
             <h2>Introduce los datos del album</h2>
-            <form action="create_album.php" method="post">
+            <form action="results.php" method="post">
             <table>
                     <tr>
                         <td>
@@ -28,7 +28,7 @@
                         </td>
                     </tr>
                 </table>
-                <input type="submit" value="CREAR">
+                <input type="submit" value="BUSCAR">
             </form>
         </section>
     </main>

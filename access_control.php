@@ -23,6 +23,12 @@ $nombre = $_POST["nombre"];
 $contrasena = $_POST["contrasena"];
 
 if (esUsuarioRegistrado($nombre, $contrasena)) {
+    // Iniciar la sesión
+    session_start();
+    
+    // Establecer una variable de sesión para indicar que el usuario está registrado
+    $_SESSION['usuario_registrado'] = $nombre;
+    
     // Redirigir al menú de usuario registrado
     header("Location: index.php");
 } else {
