@@ -5,9 +5,50 @@
 $error = isset($_GET['error']) ? $_GET['error'] : '';
 ?>
 
+<?php
+function mostrarInicioSesion()
+{
+    // Verificar si las cookies están presentes
+    if (isset($_COOKIE['nombre_usuario']) && isset($_COOKIE['contrasena_usuario'])) {
+        // El usuario está logueado
+        $nombreGuardado = $_COOKIE['nombre_usuario'];
+        $contrasenaGuardada = $_COOKIE['contrasena_usuario'];
+        $ultimaSesion = isset($_COOKIE['ultima_sesion']) ? $_COOKIE['ultima_sesion'] : "desconocida";
+    
+        echo '<p>Hola, <strong>' . $nombreGuardado . '</strong>,<br> tu última visita fue: <strong>' . $ultimaSesion . '</strong></p>';
+        echo '<form method="post" action="access_control.php">';
+        echo '<input type="hidden" name="nombre" value="' . $nombreGuardado . '">';
+        echo '<input type="hidden" name="contrasena" value="' . $contrasenaGuardada . '">';
+        echo '<input type="submit" value="Iniciar Sesión con Datos Guardados">';
+        echo '</form>';
+        echo '<form method="post" action="logout.php">';
+        echo '<input type="submit" value="Cerrar Sesión">';
+        echo '</form>';
+    }
+    else
+    {
+        echo '<form action="access_control.php" method="post" id="iniciarSesion">';
+        echo     '<label for="nombre">Nombre de usuario:</label>';
+        echo     '<input type="text" id="nombre" name="nombre">';
+        echo     '<br>';
+        echo     '<label for="contrasena">Contraseña:</label>';
+        echo     '<input type="password" id="contrasena" name="contrasena">';
+        echo     '<br>';
+        echo     '<label for="recordar">Recordar datos</label>';
+        echo     '<input type="checkbox" id="recordar" name="recordar">';
+        echo     '<br>';
+        echo     '<input type="submit" value="Enviar">';
+        echo '</form>';
+
+    }
+}
+
+// Resto del contenido de index_unregistered.php
+?>
+
 <body>
     <header>
-        <a href="index.html" class="title">PI's - Pictures & Images</a>
+        <a href="index.php" class="title">PI's - Pictures & Images</a>
         <nav>
             <ul>
                 <li>
@@ -30,15 +71,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : '';
         <h1>Inicio</h1>
         <section>
             <h2>Formulario de inicio de sesion</h2>
-            <form action="access_control.php" method="post" id="iniciarSesion">
-                <label for="nombre">Nombre de usuario:</label>
-                <input type="text" id="nombre" name="nombre">
-                <br>
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" id="contrasena" name="contrasena">
-                <br>
-                <input type="submit" value="Enviar">
-            </form>
+            <?php mostrarInicioSesion(); ?>
             <?php if ($error): ?>
                 <div class="error">
                     <?php echo htmlspecialchars($error); ?>

@@ -17,12 +17,12 @@
             <a class="boton" href="logout.php">Salir</a>
             <form method="post">
                 <select name="theme" onchange="this.form.submit()">
-                    <option value="style.css" <?php if ($_COOKIE['theme'] == 'style.css') echo 'selected'; ?>>Estilo por defecto</option>
-                    <option value="dark_style.css" <?php if ($_COOKIE['theme'] == 'dark_style.css') echo 'selected'; ?>>Estilo oscuro</option>
-                    <option value="hf_style.css" <?php if ($_COOKIE['theme'] == 'hf_style.css') echo 'selected'; ?>>Estilo de high font</option>
-                    <option value="hc_style.css" <?php if ($_COOKIE['theme'] == 'hc_style.css') echo 'selected'; ?>>Estilo de high contrast</option>
-                    <option value="hcf_style.css" <?php if ($_COOKIE['theme'] == 'hcf_style.css') echo 'selected'; ?>>Estilo de high font & contrast</option>
-                </select>
+                <option value="style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'style.css') echo 'selected'; ?>>Estilo por defecto</option>
+                <option value="dark_style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark_style.css') echo 'selected'; ?>>Estilo oscuro</option>
+                <option value="hf_style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'hf_style.css') echo 'selected'; ?>>Estilo de high font</option>
+                <option value="hc_style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'hc_style.css') echo 'selected'; ?>>Estilo de high contrast</option>
+                <option value="hcf_style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'hcf_style.css') echo 'selected'; ?>>Estilo de high font & contrast</option>
+            </select>
             </form>
 
         </section>

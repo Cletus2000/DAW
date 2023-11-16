@@ -1,6 +1,9 @@
 <?php
 // Iniciar la sesión
 session_start();
+//Borrar las cookies de recordar datos, para que el login no sea automatico
+setcookie('nombre_usuario', '', time() - 3600, "/"); // establecer la expiración en el pasado
+setcookie('contrasena_usuario', '', time() - 3600, "/");
 
 // Destruir todas las variables de sesión
 $_SESSION = array();

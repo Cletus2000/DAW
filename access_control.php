@@ -18,7 +18,7 @@ function esUsuarioRegistrado($nombre, $contrasena) {
     return false;
 }
 
-// Supongamos que los datos del usuario vienen de un formulario de inicio de sesión
+// datos del usuario vienen de formulario de inicio de sesión
 $nombre = $_POST["nombre"];
 $contrasena = $_POST["contrasena"];
 
@@ -28,6 +28,16 @@ if (esUsuarioRegistrado($nombre, $contrasena)) {
     
     // Establecer una variable de sesión para indicar que el usuario está registrado
     $_SESSION['usuario_registrado'] = $nombre;
+    
+    // Comprobar si la checkbox está marcada
+    if (isset($_POST['recordar']) && $_POST['recordar'] == 'on') {
+        // Establecer cookies para recordar nombre y contraseña durante 90 días
+        setcookie('nombre_usuario', $nombre, time() + (86400 * 90), "/");
+        setcookie('contrasena_usuario', $contrasena, time() + (86400 * 90), "/");
+        $fechaComoCadena = date("Y-m-d H:i:s", time());
+        setcookie('ultima_sesion', $fechaComoCadena, time() + (86400 * 90), "/");
+        
+    }
     
     // Redirigir al menú de usuario registrado
     header("Location: index.php");

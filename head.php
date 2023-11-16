@@ -22,13 +22,6 @@ if(!isset($_SESSION['usuario_registrado'])){
     }
 }
 
-// Comprueba si el usuario está registrado
-if(isset($_SESSION['usuario_registrado']))
-{
-    // Si el usuario está registrado, muestra un mensaje de buenos días
-    echo $_SESSION['usuario_registrado'] . ', buenos días!';
-}
-
 // Usar la cookie para determinar qué tema cargar
 $theme = $_COOKIE['theme'] ?? 'style.css';
 echo "<link href='$theme' rel='stylesheet' />";
