@@ -80,7 +80,7 @@
                         </td>
                         <td>
                             <select id="pais">
-                            <option value="1" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Alemania' ? 'selected' : '' ?>>Alemania</option>
+                                <option value="1" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Alemania' ? 'selected' : '' ?>>Alemania</option>
                                 <option value="2" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'China' ? 'selected' : '' ?>>China</option>
                                 <option value="3" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'España' ? 'selected' : '' ?>>España</option>
                                 <option value="4" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
