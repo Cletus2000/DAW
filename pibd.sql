@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-11-2023 a las 19:47:20
+-- Tiempo de generación: 30-11-2023 a las 20:44:31
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -92,7 +92,9 @@ CREATE TABLE `fotos` (
 INSERT INTO `fotos` (`idFoto`, `titulo`, `descripcion`, `fecha`, `pais`, `album`, `fichero`, `alternativo`, `fRegistro`) VALUES
 (10, 'Carl-man', 'Im just Carl', '2023-11-15', 6, 1, 'carl-man.png', 'carl-man', '2023-11-30 18:42:45'),
 (11, 'Carl-woman', 'Carl elástico', '2023-11-11', 4, 1, 'carl-woman.webp', 'carl-elastigirl', '2023-11-30 18:42:45'),
-(12, 'Bob esponja emo', 'Pobresito moviesponja, ta triste', '2023-11-05', 5, 2, 'emo-spongebob.gif', 'bob esponja emo', '2023-11-30 18:42:45');
+(12, 'Bob esponja emo', 'Pobresito moviesponja, ta triste', '2023-11-05', 5, 2, 'emo-spongebob.gif', 'bob esponja emo', '2023-11-30 18:42:45'),
+(13, 'Chinochin bebelin', 'Chinochin bebelin de parte de julito', '2023-08-17', 2, 2, 'chino.png', 'chino.png', '2023-11-30 19:26:03'),
+(14, 'Steve Harvey', 'Señor patata Steve Harvey', '2024-01-18', 4, 2, 'don-papa.jpg', 'don-papa.jpg', '2023-11-30 19:27:59');
 
 -- --------------------------------------------------------
 
@@ -238,7 +240,7 @@ ALTER TABLE `estilos`
 -- AUTO_INCREMENT de la tabla `fotos`
 --
 ALTER TABLE `fotos`
-  MODIFY `idFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `idFoto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `paises`
