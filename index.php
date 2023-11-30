@@ -13,7 +13,7 @@
             <div class="grid-container">
                 <?php
                     $conexion = Conexion();
-                    $consulta = "SELECT * FROM fotos ORDER BY fRegistro DESC LIMIT 3";
+                    $consulta = "SELECT * FROM fotos ORDER BY fRegistro DESC LIMIT 5";
                     $resultado = mysqli_query($conexion, $consulta);
 
                     while ($fila = mysqli_fetch_assoc($resultado)) {
@@ -24,7 +24,7 @@
                         echo '<br>';
                         echo '<label>' . $fila['titulo'] . '</label>';
                         echo '<br>';
-                        echo '<time datetime="' . $fila['fecha'] . '">Fecha</time>';
+                        echo '<time datetime="' . $fila['fRegistro'] . '">' . $fila['fRegistro'] . '</time>';
                         echo '<address>Pais: ' . $fila['pais'] . '</address>';
                         echo '</article>';
                     }
