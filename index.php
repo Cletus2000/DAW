@@ -18,14 +18,15 @@
 
                     while ($fila = mysqli_fetch_assoc($resultado)) {
                         echo '<article>';
-                        echo '<a href="details.php">';
+                        echo '<a href="details.php?id=' . $fila['idFoto'] . '">';
                         echo '<img src="pictures/' . $fila['fichero'] . '" alt="Foto" width="300" height="300">';
                         echo '</a>';
                         echo '<br>';
                         echo '<label>' . $fila['titulo'] . '</label>';
                         echo '<br>';
                         echo '<time datetime="' . $fila['fRegistro'] . '">' . $fila['fRegistro'] . '</time>';
-                        echo '<address>Pais: ' . $fila['pais'] . '</address>';
+                        $pais = mysqli_fetch_assoc(mysqli_query($conexion,"SELECT * FROM paises WHERE idPais = ".$fila['pais']));
+                        echo '<address>Pais: ' . $pais['nomPais'] . '</address>';
                         echo '</article>';
                     }
                 ?>

@@ -79,17 +79,17 @@
                             <label for="pais">País:</label>
                         </td>
                         <td>
-                            <select id="pais">
-                                <option value="1" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Alemania' ? 'selected' : '' ?>>Alemania</option>
-                                <option value="2" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'China' ? 'selected' : '' ?>>China</option>
-                                <option value="3" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'España' ? 'selected' : '' ?>>España</option>
-                                <option value="4" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
-                                <option value="5" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Francia' ? 'selected' : '' ?>>Francia</option>
-                                <option value="6" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Grecia' ? 'selected' : '' ?>>Grecia</option>
-                                <option value="7" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Italia' ? 'selected' : '' ?>>Italia</option>
-                                <option value="8" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'México' ? 'selected' : '' ?>>México</option>
-                                <option value="9" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Rusia' ? 'selected' : '' ?>>Rusia</option>
-                                <option value="10" <?php echo isset($_POST['pais']) && $_POST['pais'] == 'Ucrania' ? 'selected' : '' ?>>Ucrania</option>
+                            <?php
+                                include 'sql_connection.php';
+                                $conexion = Conexion();
+                                $consulta = "SELECT * FROM Paises";
+                                $resultado = mysqli_query($conexion, $consulta);
+                            ?>
+
+                            <select name="pais">
+                                <?php while ($pais = mysqli_fetch_assoc($resultado)): ?>
+                                    <option value="<?php echo $pais['idPais']; ?>"><?php echo $pais['nomPais']; ?></option>
+                                <?php endwhile; ?>
                             </select>
                         </td>
                     </tr>
