@@ -1,4 +1,5 @@
 <?php include 'head.php'; ?>
+<?php include 'sql_connection.php'; ?>
 <title>Inicio</title>
 </head>  
 
@@ -10,56 +11,23 @@
         <section>
             <h2>Resumen de las últimas 5 fotos</h2>
             <div class="grid-container">
-                <article>
-                    <a href="details.php">
-                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
-                    </a>
-                    <br>
-                    <label>Don Pollo</label>
-                    <br>
-                    <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais: Perú</address>
-                </article>
-                <article>
-                    <a href="details2.php">
-                        <img src="pictures/pablomotos.jpg" alt="Foto" width="300" height="300">
-                    </a>
-                    <br>
-                    <label>Pablo Motos</label>
-                    <br>
-                    <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais: El hormigueo</address>
-                </article>
-                <article>
-                    <a href="details.php">
-                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
-                    </a>
-                    <br>
-                    <label>Don Pollo</label>
-                    <br>
-                    <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais: Perú</address>
-                </article>
-                <article>
-                    <a href="details2.php">
-                        <img src="pictures/pablomotos.jpg" alt="Foto" width="300" height="300">
-                    </a>
-                    <br>
-                    <label>Pablo Motos</label>
-                    <br>
-                    <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais: El hormigueo</address>
-                </article>
-                <article>
-                    <a href="details.php">
-                        <img src="pictures/donpollo.jpg" alt="Foto" width="300" height="300">
-                    </a>
-                    <br>
-                    <label>Don Pollo</label>
-                    <br>
-                    <time datetime="2023-09-28">Fecha</time>
-                    <address>Pais: Perú</address>
-                </article>
+                <?php
+                    $consulta = "SELECT * FROM fotos ORDER BY fRegistro DESC LIMIT 3";
+                    $resultado = mysqli_query($conexion, $consulta);
+
+                    while ($fila = mysqli_fetch_assoc($resultado)) {
+                        echo '<article>';
+                        echo '<a href="details.php">';
+                        echo '<img src="' . $fila['ruta_foto'] . '" alt="Foto" width="300" height="300">';
+                        echo '</a>';
+                        echo '<br>';
+                        echo '<label>' . $fila['nombre'] . '</label>';
+                        echo '<br>';
+                        echo '<time datetime="' . $fila['fecha'] . '">Fecha</time>';
+                        echo '<address>Pais: ' . $fila['pais'] . '</address>';
+                        echo '</article>';
+                    }
+                ?>
             </div>
         </section>
     </main>
