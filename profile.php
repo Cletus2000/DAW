@@ -16,13 +16,18 @@
             <a class="boton" href="album_request.html">Solicitar álbum impreso</a>
             <a class="boton" href="logout.php">Salir</a>
             <form method="post">
-                <select name="theme" onchange="this.form.submit()">
-                <option value="style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'style.css') echo 'selected'; ?>>Estilo por defecto</option>
-                <option value="dark_style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'dark_style.css') echo 'selected'; ?>>Estilo oscuro</option>
-                <option value="hf_style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'hf_style.css') echo 'selected'; ?>>Estilo de high font</option>
-                <option value="hc_style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'hc_style.css') echo 'selected'; ?>>Estilo de high contrast</option>
-                <option value="hcf_style.css" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == 'hcf_style.css') echo 'selected'; ?>>Estilo de high font & contrast</option>
-            </select>
+                    <?php
+                        include 'sql_connection.php';
+                        $conexion = Conexion();
+                        $consulta = "SELECT * FROM estilos";
+                        $resultado = mysqli_query($conexion, $consulta);
+                    ?>
+
+                    <select name="theme" onchange="this.form.submit()">
+                        <?php while ($tema = mysqli_fetch_assoc($resultado)): ?>
+                            <option value="<?php echo $tema['fichero']; ?>" <?php if (isset($_COOKIE['theme']) && $_COOKIE['theme'] == $tema['fichero']) echo 'selected'; ?> ><?php echo $tema['nombre']; ?></option>
+                        <?php endwhile; ?>
+                    </select>
             </form>
 
         </section>
