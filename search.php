@@ -1,4 +1,5 @@
 <?php include 'head.php'; ?>
+<?php include 'sql_connection.php'; ?>
 <title>Formulario búsqueda imagen</title>
 </head>
 

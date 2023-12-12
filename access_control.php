@@ -22,7 +22,7 @@ function esUsuarioRegistrado($nombre, $contrasena) {
 $nombre = $_POST["nombre"];
 $contrasena = $_POST["contrasena"];
 
-if (esUsuarioRegistrado($nombre, $contrasena)) {
+if (esUsuarioRegistrado($nombre, $contrasena)) {    
     // Iniciar la sesión
     session_start();
     
