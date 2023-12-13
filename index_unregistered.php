@@ -7,7 +7,7 @@ $error = isset($_GET['error']) ? $_GET['error'] : '';
 
 <?php
 function mostrarInicioSesion()
-{
+{   
     // Verificar si las cookies están presentes
     if (isset($_COOKIE['nombre_usuario']) && isset($_COOKIE['contrasena_usuario'])) {
         // El usuario está logueado

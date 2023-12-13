@@ -1,48 +1,40 @@
 <?php
-// Datos de los usuarios permitidos
-$usuarios_permitidos = array(
-    array("nombre" => "admin", "contrasena" => "admin"),
-    array("nombre" => "raul", "contrasena" => "raul"),
-    array("nombre" => "carlos", "contrasena" => "carlos"),
-    array("nombre" => "pepe", "contrasena" => "pepe")
-);
+include 'sql_connection.php';
 
-// Comprobar si el usuario está registrado
-function esUsuarioRegistrado($nombre, $contrasena) {
-    global $usuarios_permitidos;
-    foreach ($usuarios_permitidos as $usuario) {
-        if ($usuario["nombre"] == $nombre && $usuario["contrasena"] == $contrasena) {
-            return true;
-        }
+$conn = Conexion();
+
+// Comprobar si el formulario se ha enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // datos del usuario vienen de formulario de inicio de sesión
+    $email = $_POST["email"];
+    $clave = $_POST["clave"];
+
+    // Consultar la base de datos para verificar si el usuario está registrado
+    $sql = "SELECT * FROM usuarios WHERE email = ? AND clave = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $email, $clave);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // Iniciar la sesión
+        session_start();
+
+        // Establecer una variable de sesión para indicar que el usuario está registrado
+        $_SESSION['usuario_registrado'] = $email;
+
+        // Redirigir al menú de usuario registrado
+        header("Location: index.php");
+    } else {
+        // Redirigir a la página principal con un mensaje de error
+        header("Location: index_unregistered.php?error=Usuario no registrado");
     }
-    return false;
-}
-
-// datos del usuario vienen de formulario de inicio de sesión
-$nombre = $_POST["nombre"];
-$contrasena = $_POST["contrasena"];
-
-if (esUsuarioRegistrado($nombre, $contrasena)) {    
-    // Iniciar la sesión
-    session_start();
-    
-    // Establecer una variable de sesión para indicar que el usuario está registrado
-    $_SESSION['usuario_registrado'] = $nombre;
-    
-    // Comprobar si la checkbox está marcada
-    if (isset($_POST['recordar']) && $_POST['recordar'] == 'on') {
-        // Establecer cookies para recordar nombre y contraseña durante 90 días
-        setcookie('nombre_usuario', $nombre, time() + (86400 * 90), "/");
-        setcookie('contrasena_usuario', $contrasena, time() + (86400 * 90), "/");
-        $fechaComoCadena = date("Y-m-d H:i:s", time());
-        setcookie('ultima_sesion', $fechaComoCadena, time() + (86400 * 90), "/");
-        
-    }
-    
-    // Redirigir al menú de usuario registrado
-    header("Location: index.php");
 } else {
-    // Redirigir a la página principal con un mensaje de error
-    header("Location: index_unregistered.php?error=Usuario no registrado");
+    // Redirigir a la página principal si no se ha enviado el formulario
+    header("Location: index.php");
 }
+
+// Cerrar la conexión a la base de datos al final del script
+$stmt->close();
+$conn->close();
 ?>

@@ -79,18 +79,22 @@
                             <label for="pais">País:</label>
                         </td>
                         <td>
-                            <?php
-                                include 'sql_connection.php';
-                                $conexion = Conexion();
-                                $consulta = "SELECT * FROM Paises";
-                                $resultado = mysqli_query($conexion, $consulta);
-                            ?>
-
-                            <select name="pais">
+                        <?php
+                            $conexion = Conexion();
+                            $consulta = "SELECT * FROM paises";
+                            $resultado = mysqli_query($conexion, $consulta);
+                        ?>
+                        <select id="paisPubli" name="paisPubli">
+                            <?php if ($resultado): ?>
                                 <?php while ($pais = mysqli_fetch_assoc($resultado)): ?>
-                                    <option value="<?php echo $pais['idPais']; ?>"><?php echo $pais['nomPais']; ?></option>
+                                    <option value="<?= $pais['idPais']; ?>">
+                                        <?= $pais['nomPais']; ?>
+                                    </option>
                                 <?php endwhile; ?>
-                            </select>
+                            <?php else: ?>
+                                <option value="">No hay países disponibles</option>
+                            <?php endif; ?>
+                        </select>           
                         </td>
                     </tr>
                     <!--

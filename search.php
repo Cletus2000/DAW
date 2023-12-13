@@ -32,18 +32,22 @@
                             <label for="paisPubli">Pais:</label>
                         </td>
                         <td>
-                            <select id="paisPubli" name="paisPubli">
-                                <option value="1" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Alemania' ? 'selected' : '' ?>>Alemania</option>
-                                <option value="2" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'China' ? 'selected' : '' ?>>China</option>
-                                <option value="3" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'España' ? 'selected' : '' ?>>España</option>
-                                <option value="4" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Estados Unidos' ? 'selected' : '' ?>>Estados Unidos</option>
-                                <option value="5" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Francia' ? 'selected' : '' ?>>Francia</option>
-                                <option value="6" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Grecia' ? 'selected' : '' ?>>Grecia</option>
-                                <option value="7" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Italia' ? 'selected' : '' ?>>Italia</option>
-                                <option value="8" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'México' ? 'selected' : '' ?>>México</option>
-                                <option value="9" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Rusia' ? 'selected' : '' ?>>Rusia</option>
-                                <option value="10" <?php echo isset($_POST['paisPubli']) && $_POST['paisPubli'] == 'Ucrania' ? 'selected' : '' ?>>Ucrania</option>
-                            </select>            
+                        <?php
+                            $conexion = Conexion();
+                            $consulta = "SELECT * FROM paises";
+                            $resultado = mysqli_query($conexion, $consulta);
+                        ?>
+                        <select id="paisPubli" name="paisPubli">
+                            <?php if ($resultado): ?>
+                                <?php while ($pais = mysqli_fetch_assoc($resultado)): ?>
+                                    <option value="<?= $pais['idPais']; ?>">
+                                        <?= $pais['nomPais']; ?>
+                                    </option>
+                                <?php endwhile; ?>
+                            <?php else: ?>
+                                <option value="">No hay países disponibles</option>
+                            <?php endif; ?>
+                        </select>           
                         </td>
                     </tr>
                 </table>
