@@ -12,6 +12,9 @@
                     <a href="album_request.php">📋 Imprimir album</a>
                 </li>
                 <li>
+					<a href="album.php">🖨 Mis albumes</a>
+				</li>
+                <li>
                     <a href="logout.php">🚪 Log out</a>
                 </li>
                 <li>
