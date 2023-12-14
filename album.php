@@ -39,7 +39,8 @@
                 // Obtener la última foto subida como portada del álbum
                 $consultaPortada = "SELECT fichero FROM fotos WHERE album = $idAlbum ORDER BY idFoto DESC LIMIT 1";
                 $resultadoPortada = mysqli_query($conexion, $consultaPortada);
-                $portada = mysqli_fetch_assoc($resultadoPortada)['fichero'];
+                $filaPortada = mysqli_fetch_assoc($resultadoPortada);
+                $portada = isset($filaPortada['fichero']) ? $filaPortada['fichero'] : 'nullphoto.webp';                
                 $portada = $portada ? $portada : 'nullphoto.webp';
 
                 echo '<article>';

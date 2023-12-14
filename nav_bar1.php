@@ -15,6 +15,9 @@
 					<a href="album.php">🖨 Mis albumes</a>
 				</li>
                 <li>
+					<a href="pictures.php">🎞 Mis fotos</a>
+				</li>
+                <li>
                     <a href="logout.php">🚪 Log out</a>
                 </li>
                 <li>

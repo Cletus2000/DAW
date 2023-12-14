@@ -9,7 +9,8 @@
         <!--  a en lugar de buttons  -->
         <h1>Tu perfil</h1>
         <section>
-            <a class="boton" href="sql_connection.php">Modificar datos</a>
+            <a class="boton" href="my_profile.php">Mi perfil</a>
+            <a class="boton" href="profile_data.php">Modificar datos</a>
             <a class="boton" href="#">Darte de baja</a>
             <a class="boton" href="#">Tus álbumes</a>
             <a class="boton" href="create_album.php">Crear álbum nuevo</a>

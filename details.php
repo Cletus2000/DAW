@@ -31,6 +31,14 @@
                 echo '<i>Autor: DonPollo</i>';
 
             ?>
+        <nav>
+            <ul>
+                <li>
+                    <a href="add_pta.php">Añadir foto a album</a>
+                </li>
+            </ul>
+        </nav>
+        
         </section> 
     </main>
 
