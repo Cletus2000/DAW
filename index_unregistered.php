@@ -11,14 +11,14 @@ function mostrarInicioSesion()
     // Verificar si las cookies están presentes
     if (isset($_COOKIE['nombre_usuario']) && isset($_COOKIE['contrasena_usuario'])) {
         // El usuario está logueado
-        $nombreGuardado = $_COOKIE['nombre_usuario'];
-        $contrasenaGuardada = $_COOKIE['contrasena_usuario'];
+        $email = $_COOKIE['nombre_usuario'];
+        $clave = $_COOKIE['contrasena_usuario'];
         $ultimaSesion = isset($_COOKIE['ultima_sesion']) ? $_COOKIE['ultima_sesion'] : "desconocida";
     
-        echo '<p>Hola, <strong>' . $nombreGuardado . '</strong>,<br> tu última visita fue: <strong>' . $ultimaSesion . '</strong></p>';
+        echo '<p>Hola, <strong>' . $email . '</strong>,<br> tu última visita fue: <strong>' . $ultimaSesion . '</strong></p>';
         echo '<form method="post" action="access_control.php">';
-        echo '<input type="hidden" name="nombre" value="' . $nombreGuardado . '">';
-        echo '<input type="hidden" name="contrasena" value="' . $contrasenaGuardada . '">';
+        echo '<input type="hidden" name="nombre" value="' . $email . '">';
+        echo '<input type="hidden" name="contrasena" value="' . $clave . '">';
         echo '<input type="submit" value="Iniciar Sesión con Datos Guardados">';
         echo '</form>';
         echo '<form method="post" action="logout.php">';
@@ -28,17 +28,18 @@ function mostrarInicioSesion()
     else
     {
         echo '<form action="access_control.php" method="post" id="iniciarSesion">';
-        echo     '<label for="nombre">Nombre de usuario:</label>';
-        echo     '<input type="text" id="nombre" name="nombre">';
+        echo     '<label for="email">Correo electrónico:</label>';
+        echo     '<input type="text" id="email" name="email">';
         echo     '<br>';
-        echo     '<label for="contrasena">Contraseña:</label>';
-        echo     '<input type="password" id="contrasena" name="contrasena">';
+        echo     '<label for="clave">Contraseña:</label>';
+        echo     '<input type="password" id="clave" name="clave">';
         echo     '<br>';
         echo     '<label for="recordar">Recordar datos</label>';
         echo     '<input type="checkbox" id="recordar" name="recordar">';
         echo     '<br>';
         echo     '<input type="submit" value="Enviar">';
         echo '</form>';
+        
 
     }
 }

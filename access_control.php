@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Redirigir a la página principal si no se ha enviado el formulario
-    header("Location: index.php");
+    header("Location: index_unregistered.php");
 }
 
 // Cerrar la conexión a la base de datos al final del script
